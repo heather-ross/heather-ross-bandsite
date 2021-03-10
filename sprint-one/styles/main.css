@@ -1,0 +1,13 @@
+.footer__logo {
+  display: none;
+}
+@media (min-width: 768px) {
+  .footer__logo {
+    display: block;
+  }
+}
+@media (min-width: 1280px) {
+  .footer__logo {
+    display: block;
+  }
+}/*# sourceMappingURL=main.css.map */
