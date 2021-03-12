@@ -16,3 +16,17 @@
     background-size: cover;
     background-repeat: no-repeat;
 }
+//font-styles
+@mixin font($size: null, $color: null, $weight: null) {
+    font-size: $size;
+    color: $color;
+    font-weight: $weight; 
+}
+//Flex container positions
+@mixin flex-container($align: null, $spacing: null, $wrap: null) {
+    display: flex;
+    align-items: $align;
+    justify-content: $spacing;
+    flex-wrap: $wrap;
+}
+
