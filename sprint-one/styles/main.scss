@@ -4,7 +4,7 @@
 
 
 
-html, body, main, section, footer, h1, h2, h3, h4, h5, img {
+html, body, main, section, footer, h1, h2, h3, h5, img {
     margin: 0;
 	padding: 0;
 }
@@ -27,49 +27,57 @@ h2 {
     
     line-height: 22px;
 }
-h4, p {
-    font-size: 13px;
+h4{
+    font-size: 16px;
     line-height: 18px;
 }
 h5 {
     font-size: 12px;
     line-height: 20;
 }
+p {
+    font-size: 12px;
+    line-height: 18px;
+}
 .main-nav {
     background-color: $nav-footer-bg;
     color: white;
     height: 80px;
     max-width: 100%;
-}
-.main-nav__title {
-    text-align: center;
-    padding: 14px 0 12px 0;
-    font-size: 24px;
-    font-weight: 400;
-}
-.main-nav__title--link {
-    color: white;;
-}
-.main-nav__list {
-    @include flex-container($spacing: space-evenly);
-    margin: 0;
-    padding: 0; 
-}
-.main-nav__item {
-    width: 50%;
-    text-align: center;
-    font-weight: 600; 
-}
-.main-nav__item--link {
-    color: white;
-    display: inline-block;
-}
-.main-nav__item--active {
-    border-bottom: 4px solid white;
-    padding-bottom: 8px;
-    width: 160px;
-}
 
+   &__title {
+        text-align: center;
+        padding: 14px 0 12px 0;
+        font-size: 24px;
+        font-weight: 400;
+    
+        &--link {
+            color: white;;
+        }
+    }
+
+    &__list {
+        @include flex-container($spacing: space-evenly);
+        margin: 0;
+        padding: 0; 
+    }
+    &__item {
+        width: 50%;
+        text-align: center;
+        font-weight: 600; 
+
+        &--link {
+            color: $nav-item;
+            display: block;
+        }
+    }
+}
+.main-nav__item--link:hover, .main-nav__item--active {
+    border-bottom: 4px solid $nav-item-hover;
+    padding-bottom: 8px;
+    max-width: 100%;
+    color: white;
+}
 .hero {
     background-image: url(../assets/images/hero.jpg);
     @include background-img;
@@ -77,71 +85,91 @@ h5 {
     width: 100%;
     height: 183px;
 
-}
-.hero__overlay {
-    position: absolute;     
-    width: 100%;
-    height: 183px;  
-    background-color: #323232;   
-    opacity: 0.5;  
-}
-.hero__title {
-    position: absolute;
-    color: white;
-    padding: $mobile-spacing;
-    width: 75%;
+    &__overlay {
+        position: absolute;     
+        width: 100%;
+        height: 183px;  
+        background-color: #323232;   
+        opacity: 0.5;  
+    }
+    &__title {
+        position: absolute;
+        color: white;
+        padding: $mobile-spacing;
+        width: 75%;
+    }
 }
 .about {
     padding: $mobile-spacing;
-}
-.about__title {
-    font-size: 24px;
-    line-height: 32px;
-    padding-bottom: $mobile-spacing;
-}
-.about__img {
-    max-width: 90vw;
-    min-height: 183px;
-    display: block;
-    margin: auto;
-    padding-bottom: $mobile-spacing;
+
+    &__title {
+        font-size: 24px;
+        line-height: 32px;
+        padding-bottom: $mobile-spacing;
+        padding-top: 12px;
+    }
+    &__img {
+        max-width: 90vw;
+        min-height: 183px;
+        display: block;
+        margin: auto;
+    }
 }
 .about__quote, .about__quote--name, .about-content__title {
     font-weight: 600;
 }
+.about-content__title {
+    padding-top: $mobile-spacing;
+}
 .gallery {
     background-color: $gallery-bg;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    @include flex-container($spacing: center, $wrap: wrap);
     padding: $mobile-spacing;
-}
-.gallery__title {
     
+    @include desktop {
+        padding: 20px 160px;
+    }
+
+    &__title {
+        text-align: center;
+        margin: $mobile-spacing;  
+    }
+
+    &__images {
+        @include flex-container($spacing: center, $wrap: wrap);
+        
+        @include desktop {
+        // justify-content: space-evenly;
+        }
+    }
+    &__img {
+        max-width: 90vw;
+        margin-top: 16px;
+        
+        @include desktop {
+        max-width: 344px;
+        margin-top: 12px;
+        }
+    }
 }
-.gallery__img {
-    max-width: 90vw;
-    margin-top: 16px;
-    // display: block;
-    // margin: auto;
-}
+
 .footer {
     background-color: $nav-footer-bg;
     color: white;
     padding: $mobile-spacing;
-}
-.footer__title {
-    font-size:36px;
-}
-.footer__logo {
-    display: none;
-    
-    @include tablet {
-        display: block;
+
+    &__title {
+        font-size:36px;
     }
-    @include desktop {
-        display: block;
+
+    &__logo {
+        display: none;
+    
+        @include tablet {
+            display: block;
+        }
+        @include desktop {
+            display: block;
+        }
     }
 }
 .footer__content--email {

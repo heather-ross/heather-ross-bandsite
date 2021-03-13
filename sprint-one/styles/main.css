@@ -16,7 +16,7 @@
   font-weight: 400;
   font-style: normal;
 }
-html, body, main, section, footer, h1, h2, h3, h4, h5, img {
+html, body, main, section, footer, h1, h2, h3, h5, img {
   margin: 0;
   padding: 0;
 }
@@ -44,8 +44,8 @@ h2 {
   line-height: 22px;
 }
 
-h4, p {
-  font-size: 13px;
+h4 {
+  font-size: 16px;
   line-height: 18px;
 }
 
@@ -54,46 +54,47 @@ h5 {
   line-height: 20;
 }
 
+p {
+  font-size: 12px;
+  line-height: 18px;
+}
+
 .main-nav {
   background-color: #323232;
   color: white;
   height: 80px;
   max-width: 100%;
 }
-
 .main-nav__title {
   text-align: center;
   padding: 14px 0 12px 0;
   font-size: 24px;
   font-weight: 400;
 }
-
 .main-nav__title--link {
   color: white;
 }
-
 .main-nav__list {
   display: flex;
   justify-content: space-evenly;
   margin: 0;
   padding: 0;
 }
-
 .main-nav__item {
   width: 50%;
   text-align: center;
   font-weight: 600;
 }
-
 .main-nav__item--link {
-  color: white;
-  display: inline-block;
+  color: #AFAFAF;
+  display: block;
 }
 
-.main-nav__item--active {
+.main-nav__item--link:hover, .main-nav__item--active {
   border-bottom: 4px solid white;
   padding-bottom: 8px;
-  width: 160px;
+  max-width: 100%;
+  color: white;
 }
 
 .hero {
@@ -106,7 +107,6 @@ h5 {
   width: 100%;
   height: 183px;
 }
-
 .hero__overlay {
   position: absolute;
   width: 100%;
@@ -114,7 +114,6 @@ h5 {
   background-color: #323232;
   opacity: 0.5;
 }
-
 .hero__title {
   position: absolute;
   color: white;
@@ -125,39 +124,54 @@ h5 {
 .about {
   padding: 16px;
 }
-
 .about__title {
   font-size: 24px;
   line-height: 32px;
   padding-bottom: 16px;
+  padding-top: 12px;
 }
-
 .about__img {
   max-width: 90vw;
   min-height: 183px;
   display: block;
   margin: auto;
-  padding-bottom: 16px;
 }
 
 .about__quote, .about__quote--name, .about-content__title {
   font-weight: 600;
 }
 
-.gallery {
-  background-color: #FAFAFA;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  padding: 16px;
+.about-content__title {
+  padding-top: 16px;
 }
 
+.gallery {
+  background-color: #FAFAFA;
+  padding: 16px;
+}
+@media (min-width: 1280px) {
+  .gallery {
+    padding: 20px 160px;
+  }
+}
+.gallery__title {
+  text-align: center;
+  margin: 16px;
+}
+.gallery__images {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 .gallery__img {
   max-width: 90vw;
   margin-top: 16px;
+}
+@media (min-width: 1280px) {
+  .gallery__img {
+    max-width: 344px;
+    margin-top: 12px;
+  }
 }
 
 .footer {
@@ -165,11 +179,9 @@ h5 {
   color: white;
   padding: 16px;
 }
-
 .footer__title {
   font-size: 36px;
 }
-
 .footer__logo {
   display: none;
 }
