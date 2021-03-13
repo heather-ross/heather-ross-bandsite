@@ -22,10 +22,12 @@ ul {
 h1 {
     font-size: 24px;
     line-height: 32px;
+    font-weight: 900;
 }
 h2 {
-    
+    font-size: 24px;
     line-height: 22px;
+    font-weight: 900;
 }
 h4{
     font-size: 16px;
@@ -48,8 +50,8 @@ p {
    &__title {
         text-align: center;
         padding: 14px 0 12px 0;
-        font-size: 24px;
         font-weight: 400;
+        line-height: 22px;
     
         &--link {
             color: white;;
@@ -64,17 +66,17 @@ p {
     &__item {
         width: 50%;
         text-align: center;
-        font-weight: 600; 
 
         &--link {
             color: $nav-item;
+            font-weight: 600;
             display: block;
         }
     }
 }
 .main-nav__item--link:hover, .main-nav__item--active {
     border-bottom: 4px solid $nav-item-hover;
-    padding-bottom: 8px;
+    padding-bottom: 6px;
     max-width: 100%;
     color: white;
 }
@@ -84,16 +86,17 @@ p {
     @include flex-container($align: center);
     width: 100%;
     height: 183px;
+    position:relative;
 
-    &__overlay {
+    &::after {
+        content: "";
         position: absolute;     
         width: 100%;
-        height: 183px;  
-        background-color: #323232;   
-        opacity: 0.5;  
+        height: 100%;  
+        background-color: $overlay;    
     }
     &__title {
-        position: absolute;
+        z-index: 5;
         color: white;
         padding: $mobile-spacing;
         width: 75%;
@@ -103,10 +106,11 @@ p {
     padding: $mobile-spacing;
 
     &__title {
-        font-size: 24px;
+        // font-size: 24px;
         line-height: 32px;
         padding-bottom: $mobile-spacing;
         padding-top: 12px;
+        font-weight: 900;
     }
     &__img {
         max-width: 90vw;
@@ -130,8 +134,7 @@ p {
     }
 
     &__title {
-        text-align: center;
-        margin: $mobile-spacing;  
+        padding: $mobile-spacing 0;  
     }
 
     &__images {
