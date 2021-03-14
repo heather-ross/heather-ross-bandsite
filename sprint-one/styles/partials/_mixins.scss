@@ -22,6 +22,12 @@
     color: $color;
     font-weight: $weight; 
 }
+@mixin about-h4 {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 900;
+    padding-top: 0.5*$tablet-spacing;
+}
 //Flex container positions
 @mixin flex-container($align: null, $spacing: null, $wrap: null) {
     display: flex;
