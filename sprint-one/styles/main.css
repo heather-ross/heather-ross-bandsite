@@ -1,7 +1,7 @@
 @font-face {
   font-family: "Avenir";
   src: url("../../assets/fonts/Linotype-Avenir-Next-LT-Pro-Bold.ttf") format("truetype"), url("../../assets/fonts/Linotype-AvenirNextLTPro-Bold.otf") format("opentype");
-  font-weight: bold;
+  font-weight: 900;
   font-style: normal;
 }
 @font-face {
@@ -449,12 +449,6 @@ p {
     padding-bottom: 12px;
   }
 }
-@media (min width: 944px) {
-  .gallery__images {
-    flex: 33%;
-    max-width: 33%;
-  }
-}
 @media (min-width: 1280px) {
   .gallery__images {
     justify-content: center;
@@ -469,6 +463,7 @@ p {
 .gallery__img {
   max-width: 90vw;
   margin-top: 16px;
+  filter: grayscale(100%);
 }
 @media (min-width: 768px) {
   .gallery__img {
@@ -487,6 +482,9 @@ p {
     max-width: 344px;
     margin: 12px 0;
   }
+}
+.gallery__img:hover {
+  filter: none;
 }
 
 .footer {
@@ -549,7 +547,7 @@ p {
     position: static;
   }
 }
-.footer__social--icon {
+.footer__social-icon {
   min-height: 1.375em;
   padding-right: 32px;
 }
@@ -568,6 +566,9 @@ p {
     position: absolute;
     right: 0;
   }
+}
+.footer__logo--link {
+  color: white;
 }
 @media (min-width: 768px) {
   .footer__cols {

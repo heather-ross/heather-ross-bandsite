@@ -1,6 +1,6 @@
 @use './typography' as *;
 @use './variables' as *;
-
+//media-queries
 @mixin tablet {
     @media (min-width: $tablet) {
     @content;
@@ -16,11 +16,14 @@
     @content;
     }
 }
+
+//background images
 @mixin background-img {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
 }
+
 //font-styles
 @mixin font($size: null, $color: null, $weight: null) {
     font-size: $size;
@@ -33,7 +36,8 @@
     font-weight: 900;
     padding-top: 0.5*$tablet-spacing;
 }
-//Flex container positions
+
+//flex container positions
 @mixin flex-container($align: null, $spacing: null, $wrap: null) {
     display: flex;
     align-items: $align;
