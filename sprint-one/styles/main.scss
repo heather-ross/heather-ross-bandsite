@@ -281,6 +281,8 @@ p {
   padding: 1.5*$mobile-spacing $mobile-spacing;
   @include tablet {
     padding: $tablet-spacing;
+    margin-left: 0;
+    margin-right: 0;
   }
   @include desktop {
     padding: 20px 120px;
@@ -302,26 +304,21 @@ p {
   &__images {
     @include flex-container($spacing: center, $wrap: wrap);
     padding-bottom: $mobile-spacing;
-    flex-direction: row;
     @include tablet {
-      justify-content: space-between;
       padding-bottom: 0.5*$tablet-spacing;
     }
-    @include desktop {
-      justify-content: center;
-    }
     @include desktop-xl {
-      justify-content: space-between;
       padding: $tablet-spacing 0;
     }
   }
   &__img {
     max-width: 90vw;
-    margin-top: 16px;
+    // margin-top: 16px;
+    margin: 8px;
     filter: grayscale(100%);
     @include tablet {
       max-width: 224px;
-      margin-top: $tablet-spacing;
+      // margin-top: $tablet-spacing;
     }
     @include desktop {
       max-width: 24vw;
@@ -329,7 +326,8 @@ p {
     }
     @include desktop-xl {
       max-width: 344px;
-      margin: 12px 0;
+      // margin: 12px 0;
+      margin: 12px;
     }
     &:hover {
         filter: none;

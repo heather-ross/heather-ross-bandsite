@@ -1,0 +1,97 @@
+@use './partials/typography' as *;
+@use './partials/variables' as *;
+@use './partials/mixins' as *;
+
+.hero-shows {
+  
+    // @include flex-container($align: center, $spacing: center);
+    background-image: url(../assets/images/hero-shows.jpg);
+        align-items: flex-start;
+        flex-direction: column;
+        min-height: 472px;
+        @include tablet {
+            min-height: 670px;
+            }
+            @include desktop {
+                max-height: 670px;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                }
+
+    // @include desktop-xl {
+    //   min-height: 670px;
+    // }
+    &__content {
+        z-index: 5;
+        padding: 64px 0 22px 0;
+        position: static;
+        box-sizing: border-box;
+        width: 90%;
+        @include tablet {
+            width: 85%;
+            padding-top: 56px;
+            }
+            @include desktop {
+                max-width: 30vw;
+                display: flex;
+                
+        flex-direction: column;
+                }
+    }
+    &__subtitle {
+        font-size: 12px;
+        z-index: 6;
+        color: white;
+        padding: 0 $mobile-spacing;
+        @include tablet {
+            font-size: 24px;
+            line-height: 26px;
+            padding:  0 $tablet-spacing;
+            }
+            @include desktop {
+                font-size: 24px;
+                line-height: 26px;
+                padding:  0 $tablet-spacing;
+                
+                }
+    }
+    &__title {
+      z-index: 5;
+      color: white;
+      padding: 0 $mobile-spacing;
+      width: 90%;
+      font-size: 36px;
+        line-height: 44px;
+      @include tablet {
+        font-size: 60px;
+        line-height: 82px;
+        padding: $tablet-spacing;
+      }
+      @include desktop {
+        padding-left: $desktop-side-spacing;
+        width: 40%;
+        line-height: 1.5em;
+        position: absolute;
+        top: 0;
+      }
+      @include desktop-xl {
+        width: 45%;
+      }
+    }
+    &__soundcloud {
+        width: 90%;
+        max-height: 7.5em;
+        margin: auto;
+        z-index: 2;     
+        @include tablet {
+            max-height: 10em;
+            width: 56%;
+            margin: 24px;
+            } 
+            @include desktop {
+                max-width: 40%;
+                }
+}
+  }
+

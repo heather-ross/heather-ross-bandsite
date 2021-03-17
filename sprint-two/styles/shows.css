@@ -1,0 +1,124 @@
+@font-face {
+  font-family: "Avenir";
+  src: url("../../assets/fonts/Linotype-Avenir-Next-LT-Pro-Bold.ttf") format("truetype"), url("../../assets/fonts/Linotype-AvenirNextLTPro-Bold.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Avenir";
+  src: url("../../assets/fonts/Linotype-Avenir-Next-LT-Pro-Demi.ttf") format("truetype"), url("../../assets/fonts/Linotype-AvenirNextLTPro-Demi.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Avenir";
+  src: url("../../assets/fonts/Linotype-AvenirNextLTPro-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+.hero-shows {
+  background-image: url(../assets/images/hero-shows.jpg);
+  align-items: flex-start;
+  flex-direction: column;
+  min-height: 472px;
+}
+@media (min-width: 768px) {
+  .hero-shows {
+    min-height: 670px;
+  }
+}
+@media (min-width: 1280px) {
+  .hero-shows {
+    max-height: 670px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+.hero-shows__content {
+  z-index: 5;
+  padding: 64px 0 22px 0;
+  position: static;
+  box-sizing: border-box;
+  width: 90%;
+}
+@media (min-width: 768px) {
+  .hero-shows__content {
+    width: 85%;
+    padding-top: 56px;
+  }
+}
+@media (min-width: 1280px) {
+  .hero-shows__content {
+    max-width: 30vw;
+    display: flex;
+    flex-direction: column;
+  }
+}
+.hero-shows__subtitle {
+  font-size: 12px;
+  z-index: 6;
+  color: white;
+  padding: 0 16px;
+}
+@media (min-width: 768px) {
+  .hero-shows__subtitle {
+    font-size: 24px;
+    line-height: 26px;
+    padding: 0 24px;
+  }
+}
+@media (min-width: 1280px) {
+  .hero-shows__subtitle {
+    font-size: 24px;
+    line-height: 26px;
+    padding: 0 24px;
+  }
+}
+.hero-shows__title {
+  z-index: 5;
+  color: white;
+  padding: 0 16px;
+  width: 90%;
+  font-size: 36px;
+  line-height: 44px;
+}
+@media (min-width: 768px) {
+  .hero-shows__title {
+    font-size: 60px;
+    line-height: 82px;
+    padding: 24px;
+  }
+}
+@media (min-width: 1280px) {
+  .hero-shows__title {
+    padding-left: 180px;
+    width: 40%;
+    line-height: 1.5em;
+    position: absolute;
+    top: 0;
+  }
+}
+@media (min-width: 1440px) {
+  .hero-shows__title {
+    width: 45%;
+  }
+}
+.hero-shows__soundcloud {
+  width: 90%;
+  max-height: 7.5em;
+  margin: auto;
+  z-index: 2;
+}
+@media (min-width: 768px) {
+  .hero-shows__soundcloud {
+    max-height: 10em;
+    width: 56%;
+    margin: 24px;
+  }
+}
+@media (min-width: 1280px) {
+  .hero-shows__soundcloud {
+    max-width: 40%;
+  }
+}/*# sourceMappingURL=shows.css.map */
