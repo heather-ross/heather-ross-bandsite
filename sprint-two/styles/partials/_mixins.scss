@@ -16,7 +16,10 @@
     @content;
     }
 }
-
+//divider
+@mixin divider {
+    border-bottom: 1px solid $divider;
+}
 //background images
 @mixin background-img {
     background-position: center;

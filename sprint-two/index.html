@@ -14,7 +14,9 @@
 <body>
   <header>
     <nav class="main-nav">
-      <a class="main-nav__title--link" href="./index.html"><img class="main-nav__title" src="./assets/logos/Logo-bandsite.svg"></a>
+      <a class="main-nav__title--link" href="./index.html">
+        <img class="main-nav__title" src="./assets/logos/Logo-bandsite.svg">
+      </a>
       <ul class="main-nav__list">
         <li class="main-nav__item">
           <a class="main-nav__item--active main-nav__item--link" href="./index.html">Biography</a>
@@ -41,10 +43,54 @@
     </section>
     <section class="gallery">
       <h2 class="gallery__title">Photo Gallery</h2>
-      <div class="gallery__images"><img alt="concert crowd" class="gallery__img" src="./assets/images/photo-gallery-1.jpg"><img alt="woman enjoying concert" class="gallery__img" src="./assets/images/photo-gallery-2.jpg"><img alt="hand in the air" class="gallery__img" src="./assets/images/photo-gallery-3.jpg"><img alt="woman on someone's shoulders" class="gallery__img" src="./assets/images/photo-gallery-4.jpg"><img alt="concert light show" class="gallery__img" src="./assets/images/photo-gallery-5.jpg"><img alt="singer on stage" class="gallery__img" src="./assets/images/photo-gallery-6.jpg"><img alt="crowd at concert" class="gallery__img" src="./assets/images/photo-gallery-7.jpg"><img alt="dj hand on deck" class="gallery__img" src="./assets/images/photo-gallery-8.jpg"><img alt="confetti falling on crowd" class="gallery__img" src="./assets/images/photo-gallery-9.jpg"></div>
+      <div class="gallery__images"><img alt="concert crowd" class="gallery__img" src="./assets/images/photo-gallery-1.jpg">
+        <img alt="woman enjoying concert" class="gallery__img" src="./assets/images/photo-gallery-2.jpg">
+        <img alt="hand in the air" class="gallery__img" src="./assets/images/photo-gallery-3.jpg">
+        <img alt="woman on someone's shoulders" class="gallery__img" src="./assets/images/photo-gallery-4.jpg">
+        <img alt="concert light show" class="gallery__img" src="./assets/images/photo-gallery-5.jpg">
+        <img alt="singer on stage" class="gallery__img" src="./assets/images/photo-gallery-6.jpg">
+        <img alt="crowd at concert" class="gallery__img" src="./assets/images/photo-gallery-7.jpg">
+        <img alt="dj hand on deck" class="gallery__img" src="./assets/images/photo-gallery-8.jpg">
+        <img alt="confetti falling on crowd" class="gallery__img" src="./assets/images/photo-gallery-9.jpg">
+      </div>
     </section>
-    <section class="conversation">
-      <h2 class="conversation__title">Join the Conversation</h2>
+    <section class="comments">
+      <h2 class="comments__title">Join the Conversation</h2>
+      <div class="comments__form">
+        <form id="commentForm" action="">
+          <label for="userName">Name</label>
+          <input id="userName" type="text"  name="userNameInput" placeholder="Your name">   
+          <label for="comment">Comment</label>
+          <input id="addComment" type="text" name="commentInput" autocomplete="off">
+              <button id="commentBtn" type="submit">Comment</button>
+         </form>
+      </div>
+      <div class="comments__stream">
+         <!-- <article class="comments__container">
+          <div class="comments__avatar"></div>
+          <div  class="comments__block">
+          <div class="comments__block--name">Micheal Lyons</div>
+          <div class="comments__block--date">12/18/1018</div>
+          <p class="comments__block--text">They BLEW the ROOF off at their last show, once everyone started figuring out they were going. This is still simply the greatest opening of a concert I have EVER witnessed.</p></div>
+        </div>
+       </article>
+        <article class="comments__container">
+          <div class="comments__avatar"></div>
+          <div  class="comments__block">
+          <div class="comments__block--name">Micheal Lyons</div>
+          <div class="comments__block--date">12/18/1018</div>
+          <p class="comments__block--text">They BLEW the ROOF off at their last show, once everyone started figuring out they were going. This is still simply the greatest opening of a concert I have EVER witnessed.</p></div>
+        </div>
+       </article>
+       <article class="comments__container">
+          <div class="comments__avatar"></div>
+          <div  class="comments__block">
+          <div class="comments__block--name">Micheal Lyons</div>
+          <div class="comments__block--date">12/18/1018</div>
+          <p class="comments__block--text">They BLEW the ROOF off at their last show, once everyone started figuring out they were going. This is still simply the greatest opening of a concert I have EVER witnessed.</p></div>
+        </div>
+       </article> -->
+       </div>
     </section>
   </main>
   <footer class="footer">
@@ -79,5 +125,6 @@
     <p class="footer__copy"><a class="footer__copy--link" href="#">Copyright The Bees Knees</a> © 2018<br class="footer__copy--break">
     All Rights Reserved</p>
   </footer>
+  <script src="./scripts/index-page.js"></script>
 </body>
 </html>
