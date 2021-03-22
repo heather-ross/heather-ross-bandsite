@@ -3,22 +3,26 @@
 @use './partials/mixins' as *;
 
 .hero-shows {
-  
     background-image: url(../assets/images/hero-shows.jpg);
     align-items: flex-start;
     flex-direction: column;
-    min-height: 472px;
+    min-height: 29.5em;
+    padding-bottom: $mobile-spacing;
         @include tablet {
-            min-height: 670px;
-            }
+            min-height: 41.875em;
+          }
             @include desktop {
-                max-height: 670px;
+                max-height: 37.5em;
                 flex-direction: row;
                 align-items: center;
                 justify-content: space-between;
-                }
+            }
+            @include desktop-xl {
+              max-height: 41.875em;
+          }
+      
     &__content {
-        z-index: 5;
+        z-index: 6;
         padding: 64px 0 22px 0;
         position: relative;
         box-sizing: border-box;
@@ -28,19 +32,19 @@
             padding-top: 56px;
             }
             @include desktop {
-                max-width: 50vw;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                
-                
-                }
-    }
+                max-width: 40vw;
+                padding-top: 24px;
+                position: static;
+                width: 37.5em; 
+              }
+           
+     }
     &__subtitle {
         font-size: 12px;
-        z-index: 6;
+        z-index: 7;
         color: white;
         padding: 0 $mobile-spacing;
+        
         @include tablet {
             font-size: 24px;
             line-height: 26px;
@@ -49,32 +53,40 @@
             @include desktop {
                 font-size: 24px;
                 line-height: 26px;
-                padding:  0 $desktop-side-spacing;
+                padding:  0 10em;
                 position: absolute;
-                top: 0;
+                top: 10em;
                 }
-    }
+                @include desktop-xl {
+                  padding:  0 $desktop-side-spacing;
+                  }
+                
+     }
     &__title {
-      z-index: 5;
-      color: white;
-      padding: 0 $mobile-spacing;
       width: 90%;
       font-size: 36px;
-        line-height: 44px;
+      line-height: 44px;
+      z-index: 5;
+     color: white;
+     padding: 0 $mobile-spacing;
+     width: 75%;
+      
       @include tablet {
         font-size: 60px;
         line-height: 82px;
         padding: $tablet-spacing;
       }
       @include desktop {
-        padding-left: $desktop-side-spacing;
-        width: 60%;
-        line-height: 1.5em;
-        position: absolute;
-        top: 0;
+        padding: 160px;
+        width: 100%;
+        position: static;
+        font-size: 55px;
+        
       }
       @include desktop-xl {
-        width: 45%;
+        width: 100%;
+        position: static;
+        padding: $desktop-side-spacing;   
       }
     }
     &__soundcloud {
@@ -82,33 +94,144 @@
         max-height: 7.5em;
         margin: auto;
         z-index: 2;     
+        
         @include tablet {
             max-height: 10em;
             width: 56%;
             margin: 24px;
-            } 
+            
+        } 
             @include desktop {
-                max-width: 40%;
-                }
+              width: 24.0625em;
+              height: 8.125em;
+              margin: 2*$desktop-spacing 0 0 1.5*$desktop-spacing;
+          }
+          @include desktop-xl {
+            width: 27.25em;
+            height: 9.125em;
+        }
+     }
+ }
+.shows {
+  padding: $mobile-spacing;
+  @include tablet {
+    padding: $tablet-spacing;
+    }
+    @include desktop {
+      display: flex;
+      justify-content: space-between;
+      padding: 1.5*$desktop-spacing 9.375em $desktop-spacing 9.375em;
+    }
+    @include desktop-xl {
+   padding: 1.5*$desktop-spacing $desktop-side-spacing $desktop-spacing $desktop-side-spacing;
+    }
+  &__title {
+    line-height: 2em;
+    padding-bottom: 12px;
+    font-weight: 900;
+    @include tablet {
+      padding-bottom: 1.5*$tablet-spacing;
+    }
+  }
+  &__wrap {
+    margin-bottom: $tablet-spacing;
+  }
+  &__row {
+    border-bottom: 1px solid $grey-med;
+    
+    @include tablet {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      border-bottom: 1px solid $grey-med;
+      
+    }
+    @include desktop {
+      width: 50.25em;
+      padding: 2px 0; 
+    }
+  }
+  &__content {
+    
+    @include mobile-large {
+      text-align: center;
+    }
+    @include tablet {
+      width: 25%;
+      text-align: left;
+    }
+  }
+  &__heading {
+    color:$grey-dark;
+    font-weight: 600;
+    padding-top: 0.75rem;
+    
+    @include tablet {
+      display: none;
+    }
+  }
+    
+  &__text {
+    @include desktop {
+      font-size: 14px;
+      margin-left: 80px;
+    }
+    @include desktop-xl {
+      font-size: 14px;
+      margin-left: 70px;
+    }
+    
+  }
+  
+  &__button {
+    @include mobile-large {
+      width: 70%;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+    }
+    @include tablet {
+      width: 174px;
+      margin-right: 0;
+    }
+    @include desktop {
+      width: 160px;
+      height: 48px;
+    }
+    
+    &:hover {
+      background-color: #000000;
+    }
+    &:focus {
+      outline: #000000;
+    }
+  }
 }
+
+.shows__row:first-of-type .shows__heading {
+  @include tablet {
+    display: block;
+    margin: -45px 0 35px 0;
+  }
+  @include desktop {
+    margin-left: 5em;
+  }
+  @include desktop-xl {
+    margin-left: 4.375em;
+  }
 }
-// .shows {
+.shows__content:first-of-type .shows__heading {
 
-//   &__title {
-
-//   }
-//   &__wrap {
-
-//   }
-//   &__row {
-
-//   }
-//   &__date-wrap {
-
-//   }
-//   &
-
-// }
-
-
+   @include desktop-xl {
+     margin-left: 0;
+  }
+}
+.shows__content:first-of-type .shows__text {
+    font-weight: 600;
+    
+    @include desktop-xl {
+      font-size: 15px;
+      margin-left: 0;
+    }
+}
 

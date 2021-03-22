@@ -11,7 +11,7 @@ let showsArray = [
     },   
     {
     showDate: 'Fri Jul 22 2019', 
-    venue: 'View Loungue',
+    showVenue: 'View Loungue',
     showLocation: 'San Fancisco, CA'
     },
     {
@@ -43,7 +43,7 @@ let showsWrap = document.createElement('section');
     showsContainer.appendChild(showsWrap);
 
 
-function displayShowsRow(content) {    
+function displayShows(content) {    
 
 let showsRow = document.createElement('div');
     showsRow.classList.add('shows__row');
@@ -51,10 +51,10 @@ let showsRow = document.createElement('div');
 
     //Date Wrap
 let showsDateWrap = document.createElement('div');
-    showsDateWrap.classList.add('shows__date-wrap');
+    showsDateWrap.classList.add('shows__content');
     showsRow.appendChild(showsDateWrap);
 
-let showsHeadingDate = document.createElement('h4');
+let showsHeadingDate = document.createElement('h5');
     showsHeadingDate.classList.add('shows__heading');
     showsHeadingDate.innerText = 'DATE';
     showsDateWrap.appendChild(showsHeadingDate);
@@ -66,10 +66,10 @@ let showsTextDate = document.createElement('p');
 
     //Venue Wrap
 let showsVenueWrap = document.createElement('div');
-    showsVenueWrap.classList.add('shows__venue-wrap');
+    showsVenueWrap.classList.add('shows__content');
     showsRow.appendChild(showsVenueWrap);
 
-let showsHeadingVenue = document.createElement('h4');
+let showsHeadingVenue = document.createElement('h5');
     showsHeadingVenue.classList.add('shows__heading');
     showsHeadingVenue.innerText = 'VENUE';
     showsVenueWrap.appendChild(showsHeadingVenue);
@@ -81,12 +81,12 @@ let showsTextVenue = document.createElement('p');
 
     //Location Wrap
 let showsLocationWrap = document.createElement('div');
-    showsLocationWrap.classList.add('shows__location-wrap');
+    showsLocationWrap.classList.add('shows__content');
     showsRow.appendChild(showsLocationWrap);
 
-let showsHeadingLocation = document.createElement('h4');
+let showsHeadingLocation = document.createElement('h5');
     showsHeadingLocation.classList.add('shows__heading');
-    showsHeadingLocation.innerText = 'Location';
+    showsHeadingLocation.innerText = 'LOCATION';
     showsLocationWrap.appendChild(showsHeadingLocation);
 
 let showsTextLocation = document.createElement('p');
@@ -96,12 +96,13 @@ let showsTextLocation = document.createElement('p');
 
 let showsBtn = document.createElement('button');
     showsBtn.classList.add('shows__button');
-    showsBtn.innerText = "Buy Now";
+    showsBtn.innerText = "BUY TICKETS";
     showsRow.appendChild(showsBtn);
 }
 
-showsArray.forEach(item => displayShowsRow(item))
-for (let i = 0; i < showsArray.length; i++) {
-    displayShowsRow(showsArray[i]);
- }
-
+ function addNewShow() { 
+    showsArray.forEach(function(showsArray) { 
+        displayShows(showsArray);
+    }) 
+}
+addNewShow();

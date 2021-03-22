@@ -8,6 +8,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/icons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="./assets/icons/favicon-16x16.png">
   <link href="https://fonts.google.com/specimen/Roboto">
+  <link href="./styles/global.css" rel="stylesheet">
   <link href="./styles/main.css" rel="stylesheet">
   <title>Band Site</title>
 </head>
@@ -56,40 +57,17 @@
     </section>
     <section class="comments">
       <h2 class="comments__title">Join the Conversation</h2>
-      <div class="comments__form">
-        <form id="commentForm" action="">
-          <label for="userName">Name</label>
-          <input id="userName" type="text"  name="userNameInput" placeholder="Your name">   
-          <label for="comment">Comment</label>
-          <input id="addComment" type="text" name="commentInput" autocomplete="off">
-              <button id="commentBtn" type="submit">Comment</button>
+      <div class="comments__form-wrap">
+        <div class="comments__avatar comments__avatar--form"></div>
+        <form id="commentForm" class="comments__form" action="">
+          <label for="userName"><h5 class="comments__label">NAME</h5></label>
+          <input id="userName"  class="comments__user-name" type="text"  name="userNameInput" autocomplete="off" placeholder="Enter your name">   
+          <label for="comment"><h5 class="comments__label">COMMENT</h5></label>
+          <textarea id="addComment" class="comments__add-comment" type="text" name="commentInput" autocomplete="off" placeholder="Add a new comment"></textarea>
+              <button id="commentBtn" class="comments__button" type="submit">COMMENT</button>
          </form>
       </div>
-      <div class="comments__stream">
-         <!-- <article class="comments__container">
-          <div class="comments__avatar"></div>
-          <div  class="comments__block">
-          <div class="comments__block--name">Micheal Lyons</div>
-          <div class="comments__block--date">12/18/1018</div>
-          <p class="comments__block--text">They BLEW the ROOF off at their last show, once everyone started figuring out they were going. This is still simply the greatest opening of a concert I have EVER witnessed.</p></div>
-        </div>
-       </article>
-        <article class="comments__container">
-          <div class="comments__avatar"></div>
-          <div  class="comments__block">
-          <div class="comments__block--name">Micheal Lyons</div>
-          <div class="comments__block--date">12/18/1018</div>
-          <p class="comments__block--text">They BLEW the ROOF off at their last show, once everyone started figuring out they were going. This is still simply the greatest opening of a concert I have EVER witnessed.</p></div>
-        </div>
-       </article>
-       <article class="comments__container">
-          <div class="comments__avatar"></div>
-          <div  class="comments__block">
-          <div class="comments__block--name">Micheal Lyons</div>
-          <div class="comments__block--date">12/18/1018</div>
-          <p class="comments__block--text">They BLEW the ROOF off at their last show, once everyone started figuring out they were going. This is still simply the greatest opening of a concert I have EVER witnessed.</p></div>
-        </div>
-       </article> -->
+      <div class="comments__stream">        
        </div>
     </section>
   </main>

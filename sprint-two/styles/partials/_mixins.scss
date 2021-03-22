@@ -1,6 +1,12 @@
 @use './typography' as *;
 @use './variables' as *;
 //media-queries
+
+@mixin mobile-large {
+    @media (min-width: $mobile-large) {
+    @content;
+    }
+}
 @mixin tablet {
     @media (min-width: $tablet) {
     @content;
@@ -16,10 +22,7 @@
     @content;
     }
 }
-//divider
-@mixin divider {
-    border-bottom: 1px solid $divider;
-}
+
 //background images
 @mixin background-img {
     background-position: center;

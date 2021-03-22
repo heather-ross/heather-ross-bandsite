@@ -24,31 +24,36 @@ function displayComments(comment) {
     commentContainer.classList.add('comments__container');
     
     let commentAvatar = document.createElement('div');
-    commentAvatar.classList.add('.comments__avatar');
+    commentAvatar.classList.add('comments__avatar');
     commentContainer.appendChild(commentAvatar);
+
+    let commentBlock = document.createElement('div');
+    commentBlock.classList.add('comments__block');
+    commentContainer.appendChild(commentBlock);
 
     let commentName = document.createElement('h5');
     commentName.classList.add('comments__block--name');
     commentName.innerText = comment.userName;
-    commentStream.appendChild(commentContainer);
-    commentContainer.appendChild(commentName);
+    commentContainer.appendChild(commentBlock);
+    commentBlock.appendChild(commentName);
 
     let commentDate = document.createElement('date');
     commentDate.classList.add('comments__block--date');
     commentDate.innerText = comment.postDate;
-    commentStream.appendChild(commentContainer);
-    commentContainer.appendChild(commentDate);
+    commentContainer.appendChild(commentBlock);
+    commentBlock.appendChild(commentDate);
 
     let commentText = document.createElement('p');
     commentText.classList.add('comments__block--comment');
     commentText.innerText = comment.userComment;
     commentStream.appendChild(commentContainer);
-    commentContainer.appendChild(commentText);  
+    commentContainer.appendChild(commentBlock);  
+    commentBlock.appendChild(commentText);
 }
 
 function addNewComment() {
     commentStream.innerHTML = '';
-    //for every comment in commentsArray, run ^^ displayComments ^^function 
+    //for every comment in array, run ^^ displayComments function
     commentsArray.forEach(function(commentsArray) { 
         displayComments(commentsArray);
     }) 
@@ -59,15 +64,15 @@ const today = new Date();
 const commentForm = document.getElementById('commentForm');
 commentForm.addEventListener('submit', function(e) {
     e.preventDefault();
-    const userNameValue = e.target.userNameInput.value; //reference Forms in Detail page synapse
+    const userNameValue = e.target.userNameInput.value; //reference 'Forms in Detail' page synapse
     const addCommentValue = e.target.commentInput.value;
-    const date = (today.getMonth()+1)+'/'+today.getDate()+'/'+today.getFullYear(); //research JS current date
-    commentsArray.unshift({ //newest comment at top
+    const date = (today.getMonth()+1)+'/'+today.getDate()+'/'+today.getFullYear(); //<--This was the easiest thing I did all week!
+    commentsArray.unshift({ //newest comment 'pushed' to front of array
         userName: userNameValue,
         postDate: date,
         userComment: addCommentValue,
     })
-    e.target.remove();
+    e.target.reset();// resets list to only default comments on page when reloaded
     addNewComment();
 })
 
