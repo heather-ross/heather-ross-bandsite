@@ -53,9 +53,9 @@
             @include desktop {
                 font-size: 24px;
                 line-height: 26px;
-                padding:  0 10em;
+                padding:  0 160px;
                 position: absolute;
-                top: 10em;
+                top: 160px;
                 }
                 @include desktop-xl {
                   padding:  0 $desktop-side-spacing;
@@ -84,8 +84,6 @@
         
       }
       @include desktop-xl {
-        width: 100%;
-        position: static;
         padding: $desktop-side-spacing;   
       }
     }
@@ -108,7 +106,9 @@
           }
           @include desktop-xl {
             width: 27.25em;
-            height: 9.125em;
+            height: 9.125em
+
+            ;
         }
      }
  }
@@ -214,10 +214,10 @@
     margin: -45px 0 35px 0;
   }
   @include desktop {
-    margin-left: 5em;
+    margin-left: 80px;
   }
   @include desktop-xl {
-    margin-left: 4.375em;
+    margin-left: 70px;
   }
 }
 .shows__content:first-of-type .shows__heading {

@@ -79,9 +79,9 @@
   .hero-shows__subtitle {
     font-size: 24px;
     line-height: 26px;
-    padding: 0 10em;
+    padding: 0 160px;
     position: absolute;
-    top: 10em;
+    top: 160px;
   }
 }
 @media (min-width: 1440px) {
@@ -115,8 +115,6 @@
 }
 @media (min-width: 1440px) {
   .hero-shows__title {
-    width: 100%;
-    position: static;
     padding: 180px;
   }
 }
@@ -265,12 +263,12 @@
 }
 @media (min-width: 1280px) {
   .shows__row:first-of-type .shows__heading {
-    margin-left: 5em;
+    margin-left: 80px;
   }
 }
 @media (min-width: 1440px) {
   .shows__row:first-of-type .shows__heading {
-    margin-left: 4.375em;
+    margin-left: 70px;
   }
 }
 
