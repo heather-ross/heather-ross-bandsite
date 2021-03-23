@@ -228,6 +228,9 @@
     margin-left: 70px;
   }
 }
+.shows__button {
+  width: 100%;
+}
 @media (min-width: 440px) {
   .shows__button {
     width: 70%;

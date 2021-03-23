@@ -166,6 +166,7 @@
     }
   }
   &__button {
+    width: 100%;
     @include mobile-large {
       width: 70%;
       margin-left: auto;
