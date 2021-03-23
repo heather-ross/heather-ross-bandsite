@@ -330,6 +330,9 @@
 .comments__add-comment {
   height: 90px;
 }
+.comments__button:hover {
+  background-color: #000000;
+}
 @media (min-width: 768px) {
   .comments__button {
     position: absolute;

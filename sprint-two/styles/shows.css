@@ -272,7 +272,7 @@
   }
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1280px) {
   .shows__content:first-of-type .shows__heading {
     margin-left: 0;
   }
@@ -281,9 +281,13 @@
 .shows__content:first-of-type .shows__text {
   font-weight: 600;
 }
+@media (min-width: 1280px) {
+  .shows__content:first-of-type .shows__text {
+    margin-left: 0;
+  }
+}
 @media (min-width: 1440px) {
   .shows__content:first-of-type .shows__text {
     font-size: 15px;
-    margin-left: 0;
   }
 }/*# sourceMappingURL=shows.css.map */

@@ -225,6 +225,9 @@
     height: 90px;
   }
   &__button {
+    &:hover {
+      background-color: #000000;
+    }
     @include tablet {
       position: absolute;
       right: 124px;
