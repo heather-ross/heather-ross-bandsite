@@ -1,43 +1,25 @@
-let showsArray = [
-    {
-    showDate: 'Mon Dec 17 2018', 
-    showVenue: 'Ronald Lane',
-    showLocation: 'San Fancisco, CA'
-    },
-    {
-    showDate: 'Tue Jul 18 2019', 
-    showVenue: 'Pier 3 East',
-    showLocation: 'San Fancisco, CA'
-    },   
-    {
-    showDate: 'Fri Jul 22 2019', 
-    showVenue: 'View Loungue',
-    showLocation: 'San Fancisco, CA'
-    },
-    {
-    showDate: 'Sat Aug 12 2019', 
-    showVenue: 'Hyatt Agency',
-    showLocation: 'San Fancisco, CA'
-    },
-    {
-    showDate: 'Fri Sep 05 2019', 
-    showVenue: 'Moscow Center',
-    showLocation: 'San Fancisco, CA'
-    },   
-    {
-    showDate: 'Wed Aug 11 2019', 
-    showVenue: 'Pres Club',
-    showLocation: 'San Fancisco, CA'
-    },
-]
+const apiUrl = "https://project-1-api.herokuapp.com/showdates";
+const apiKey = "?api_key=bd8144bc-4fe8-4d7d-a292-4c48539cecb5";
 
-let showsContainer = document.querySelector('.shows'); 
+function getShows() {
+    axios.get(apiUrl + apiKey)
+    .then(response => {
+       let commentData = response.data;
+       displayShows(commentData);
+    }) 
+    .catch(err => {
+        alert("Please try again " + err);
+    })
+}
+getShows();
 
-let showsTitle = document.createElement('h2');
+    let showsContainer = document.querySelector('.shows'); 
+
+    let showsTitle = document.createElement('h2');
     showsTitle.classList.add('shows__title');
     showsTitle.innerText = 'Shows';
     
-let showsWrap = document.createElement('section');
+    let showsWrap = document.createElement('section');
     showsWrap.classList.add('shows__wrap');
     
     showsContainer.appendChild(showsTitle);
@@ -45,47 +27,49 @@ let showsWrap = document.createElement('section');
 
 
 function displayShows(content) {    
-
-let showsRow = document.createElement('div');
+    
+    content.forEach(showContent => {
+          
+    let showsRow = document.createElement('div');
     showsRow.classList.add('shows__row');
 
     //Date Wrap
-let showsDateWrap = document.createElement('div');
+    let showsDateWrap = document.createElement('div');
     showsDateWrap.classList.add('shows__content');
 
-let showsHeadingDate = document.createElement('h5');
+    let showsHeadingDate = document.createElement('h5');
     showsHeadingDate.classList.add('shows__heading');
     showsHeadingDate.innerText = 'DATE';
 
-let showsTextDate = document.createElement('p');
+    let showsTextDate = document.createElement('p');
     showsTextDate.classList.add('shows__text');
-    showsTextDate.innerText = content.showDate;
+    showsTextDate.innerText = showContent.date;
 
     //Venue Wrap
-let showsVenueWrap = document.createElement('div');
+    let showsVenueWrap = document.createElement('div');
     showsVenueWrap.classList.add('shows__content');
 
-let showsHeadingVenue = document.createElement('h5');
+    let showsHeadingVenue = document.createElement('h5');
     showsHeadingVenue.classList.add('shows__heading');
     showsHeadingVenue.innerText = 'VENUE';
 
-let showsTextVenue = document.createElement('p');
+    let showsTextVenue = document.createElement('p');
     showsTextVenue.classList.add('shows__text');
-    showsTextVenue.innerText = content.showVenue;
+    showsTextVenue.innerText = showContent.place;
 
     //Location Wrap
-let showsLocationWrap = document.createElement('div');
+    let showsLocationWrap = document.createElement('div');
     showsLocationWrap.classList.add('shows__content');
 
-let showsHeadingLocation = document.createElement('h5');
+    let showsHeadingLocation = document.createElement('h5');
     showsHeadingLocation.classList.add('shows__heading');
     showsHeadingLocation.innerText = 'LOCATION';
 
-let showsTextLocation = document.createElement('p');
+    let showsTextLocation = document.createElement('p');
     showsTextLocation.classList.add('shows__text');
-    showsTextLocation.innerText = content.showLocation;
+    showsTextLocation.innerText = showContent.location;
 
-let showsBtn = document.createElement('button');
+    let showsBtn = document.createElement('button');
     showsBtn.classList.add('shows__button');
     showsBtn.innerText = "BUY TICKETS";
 
@@ -100,11 +84,5 @@ let showsBtn = document.createElement('button');
     showsLocationWrap.appendChild(showsHeadingLocation);
     showsLocationWrap.appendChild(showsTextLocation);
     showsRow.appendChild(showsBtn);
-}
-
- function addNewShow() { 
-    showsArray.forEach(function(showsArray) { 
-        displayShows(showsArray);
     }) 
 }
-addNewShow();

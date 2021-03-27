@@ -57,7 +57,7 @@
       top: 160px;
     }
     @include desktop-xl {
-      padding: 0 $desktop-side-spacing;
+      padding: 0 $desktop-xl-side-spacing;
     }
   }
   &__title {
@@ -80,7 +80,7 @@
       font-size: 55px;
     }
     @include desktop-xl {
-      padding: $desktop-side-spacing;
+      padding: $desktop-xl-side-spacing;
     }
   }
   &__soundcloud {
@@ -115,7 +115,7 @@
     padding: 1.5*$desktop-spacing 9.375em $desktop-spacing 9.375em;
   }
   @include desktop-xl {
-    padding: 1.5*$desktop-spacing $desktop-side-spacing $desktop-spacing $desktop-side-spacing;
+    padding: 1.5*$desktop-spacing $desktop-xl-side-spacing $desktop-spacing $desktop-xl-side-spacing;
   }
   &__title {
     line-height: 2em;

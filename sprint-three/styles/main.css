@@ -358,6 +358,7 @@
   justify-content: flex-start;
   border-bottom: 1px solid #E1E1E1;
   padding: 16px 0;
+  position: relative;
 }
 @media (min-width: 768px) {
   .comments__container {

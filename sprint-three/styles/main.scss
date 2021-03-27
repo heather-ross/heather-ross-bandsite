@@ -13,7 +13,7 @@
     padding: $tablet-spacing 160px;
   }
   @include desktop-xl {
-    padding: $tablet-spacing $desktop-side-spacing;
+    padding: $tablet-spacing $desktop-xl-side-spacing;
   }
   &__title {
     line-height: 2em;
@@ -176,7 +176,7 @@
     padding: $desktop-spacing 160px 0.5*$desktop-spacing 160px;
   }
   @include desktop-xl {
-    padding: $desktop-spacing $desktop-side-spacing 0.5*$desktop-spacing $desktop-side-spacing;
+    padding: $desktop-spacing $desktop-xl-side-spacing 0.5*$desktop-spacing $desktop-xl-side-spacing;
   }
   &__form-wrap {
     display: flex;
@@ -258,6 +258,7 @@
     justify-content: flex-start;
     border-bottom: 1px solid $grey-med;
     padding: $mobile-spacing 0;
+    position: relative;
     @include tablet {
       padding: 24px 0 6px 0;
     }
@@ -296,6 +297,11 @@
         line-height: 20px;
       }
     }
+  // &__deleteBtn   {
+  //   position: absolute;
+  //   margin-right: 0;
+
+  // }
   }
 }
 input, textarea {

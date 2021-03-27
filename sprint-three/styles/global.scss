@@ -71,7 +71,7 @@ button {
     padding-left: 160px;
   }
   @include desktop-xl {
-    padding-left: $desktop-side-spacing;
+    padding-left: $desktop-xl-side-spacing;
   }
   &__title {
     display: block;
@@ -168,7 +168,7 @@ button {
         padding: $tablet-spacing;
       }
       @include desktop {
-        padding: $desktop-side-spacing;
+        padding: $desktop-xl-side-spacing;
         width: 50%;
         line-height: 1.5em;
         position: absolute;
@@ -179,7 +179,7 @@ button {
       }
     }
   }
-  .footer {
+.footer {
     background-color: $black-primary;
     color: white;
     padding: $mobile-spacing;
@@ -192,8 +192,8 @@ button {
       padding-right: 160px;
     }
     @include desktop-xl {
-      padding-left: $desktop-side-spacing;
-      padding-right: $desktop-side-spacing;
+      padding-left: $desktop-xl-side-spacing;
+      padding-right: $desktop-xl-side-spacing;
     }
     &__row {
       @include tablet {
