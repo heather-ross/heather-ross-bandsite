@@ -6,7 +6,7 @@
 }
 .about {
   padding: $mobile-spacing;
-  @include tablet {
+  @include mobile-large {
     padding: $tablet-spacing;
   }
   @include desktop {
@@ -42,6 +42,12 @@
     }
     @include desktop-xl {
       min-height: 450px;
+    }
+  }
+  &__content-wrap {
+    @include desktop-xl {
+      max-width: 1080px;
+      margin: auto;
     }
   }
   &__quote {
@@ -113,25 +119,23 @@
   background-color: $grey-light;
   padding: 1.5*$mobile-spacing $mobile-spacing;
   @include tablet {
-    padding: $tablet-spacing;
-    margin-left: 0;
-    margin-right: 0;
+    padding: $tablet-spacing 10px $mobile-spacing; 
   }
   @include desktop {
     padding: 20px 120px;
   }
   @include desktop-xl {
-    padding: 20px 160px;
+    padding: 20px 160px 10px 160px;
   }
   &__title {
     @include tablet {
-      padding: 10px 0;
+      padding: 10px 13.25px;
     }
     @include desktop {
       padding: 20px 40px;
     }
     @include desktop-xl {
-      padding: 20px 0 40px 0;
+      padding: 20px 0 40px 18px;
     }
   }
   &__images {
@@ -150,14 +154,14 @@
     filter: grayscale(100%);
     @include tablet {
       max-width: 224px;
-      margin: 8px;
+      margin: 12px;
     }
     @include desktop {
       max-width: 24vw;
       margin: 10px;
     }
     @include desktop-xl {
-      max-width: 344px; // margin: 12px 0;
+      max-width: 344px; 
       margin: 12px;
     }
     &:hover {
@@ -166,11 +170,14 @@
   }
 }
 .comments {
-  padding: $mobile-spacing;
+  padding: 1.5*$mobile-spacing $mobile-spacing 2.5*$mobile-spacing $mobile-spacing;
   max-width: 100vw;
   box-sizing: border-box;
-  @include tablet {
+  @include mobile-large {
     padding: $tablet-spacing;
+  }
+  @include mobile-large {
+    padding-top: 1.5*$tablet-spacing;
   }
   @include desktop {
     padding: $desktop-spacing 160px 0.5*$desktop-spacing 160px;
@@ -184,38 +191,54 @@
     border-bottom: 1px solid $grey-med;
     padding: $mobile-spacing 0;
     position: relative;
+    @include mobile-large {
+      padding: 0 $mobile-spacing;
+    }
     @include tablet {
       padding-bottom: 86px;
     }
   }
   &__form-wrap, &__stream {
     @include tablet {
-      width: 520px;
+      max-width: 520px;
       margin: auto;
       box-sizing: border-box;
     }
   }
   &__form {
     width: 80%;
-  }
-  &__stream {
     @include tablet {
-      padding-bottom: 0.5*$desktop-spacing;
+      margin-right: 40px;
+   }   
+    @include desktop-xl {
+      margin-right: 50px;
     }
   }
   &__avatar {
     background-image: none;
     background-color: $grey-med;
     border-radius: 50%;
-    height: 2.5em;
-    min-width: 2.5em;
+    height: 40px;
+    min-width: 40px;
+    @include tablet {
+       margin-left: -15px;
+    }
+    @include desktop-xl {
+      margin-left: -20px;
+    }
     &--form {
       background-image: url(../assets/images/mohan-muruge.jpg);
       @include background-img;
       background-position: left;
       margin-top: 40px;
-      height: 3em;
-      min-width: 3em;
+      height: 48px;
+      min-width: 48px;
+      @include tablet {
+        margin-left: -15px;
+     }
+      @include desktop-xl {
+        margin-left: -20px;
+      }
     }
   }
   &__label {
@@ -230,35 +253,45 @@
     height: 90px;
   }
   &__button {
+    @include mobile-large {
+      width: 90%;
+    }    
     &:hover {
       background-color: #000000;
     }
-    @include mobile-large {
-      
-    }
     @include tablet {
       position: absolute;
-      // right: 124px;
       right: 0;
       width: 159px;
     }
     @include desktop {
-      // right: 380px;
-      width: 160px;
+      width: 145px;
+      right: 1.75em;
     }
     @include desktop-xl {
-      // right: 460px;
+      width: 160px;
+      right: 0;
     }
     &:focus {
       outline: #000000;
     }
   }
+  &__stream {
+    @include mobile-large {
+      padding: 0 $mobile-spacing;
+    }
+    @include tablet {
+      padding-bottom: 0.5*$desktop-spacing;
+    }
+  }
   &__container {
-    display: flex;
-    justify-content: flex-start;
+    @include flex-container($spacing: flex-start);
     border-bottom: 1px solid $grey-med;
-    padding: $mobile-spacing 0;
+    padding: 1.5*$mobile-spacing 0 10px 0;
     position: relative;
+    @include mobile-large {
+      padding: $tablet-spacing;
+    }
     @include tablet {
       padding: 24px 0 6px 0;
     }
@@ -266,15 +299,16 @@
   &__block {
     max-width: 210px;
     padding-left: $mobile-spacing;
-    @include tablet {
-      max-width: 100%;
+    @include mobile-large {
+      width: 100%;
+      max-width: 400px;
     }
     &--name, &--date {
       display: inline-block;
       vertical-align: middle;
       @include tablet {
         vertical-align: baseline;
-        font-size: 16px;
+        font-size: 1em;
       }
     }
     &--name {
@@ -282,31 +316,27 @@
     }
     &--date {
       color: $grey-dark;
-      font-size: 13px;
+      font-size: 0.8125em;
       position: absolute;
       right: 16px;
+     
       @include tablet {
         position: static;
         padding-left: 10px;
-        font-size: 14px;
+        font-size: 0.875em;
       }
     }
     &--comment {
+      margin-top: 6px;
       @include tablet {
         margin-top: 0;
         line-height: 20px;
       }
     }
-  // &__deleteBtn   {
-  //   position: absolute;
-  //   margin-right: 0;
-
-  // }
   }
 }
 input, textarea {
-  // width: 224px;
-  width: 100%;
+  width: 224px;
   padding: 1.25em;
   margin: 0.5em 0;
   background-color: $grey-light;
@@ -316,10 +346,16 @@ input, textarea {
   box-sizing: border-box;
   font-family: 'Avenir', 'Roboto', sans-serif;
   resize: none;
+  @include mobile-large {
+      width: 90%;
+  }
   @include tablet {
-    width: 460px;
+    width: 450px;
   }
   @include desktop {
+    width: 420px;
+  }
+  @include desktop-xl {
     width: 460px;
   }
   &:focus {

@@ -68,7 +68,7 @@ button {
     @include flex-container($align: flex-end, $spacing: flex-start);
   }
   @include desktop {
-    padding-left: 160px;
+    padding-left: 12.5vw;
   }
   @include desktop-xl {
     padding-left: $desktop-xl-side-spacing;
@@ -86,7 +86,7 @@ button {
       margin-left: 0;
     }
     @include desktop-xl {
-      margin-left: 4px;
+      margin-left: 0.3125vw;
     }
     &--link {
       color: white;
@@ -155,7 +155,7 @@ button {
       position: absolute;
       width: 100%;
       height: 100%;
-      background-color: $overlay;
+      background-color: $overlay-hero;
     }
     &__title {
       z-index: 5;
@@ -163,7 +163,7 @@ button {
       padding: 0 $mobile-spacing;
       width: 75%;
       @include tablet {
-        font-size: 60px;
+        font-size: 3.75em;
         line-height: 72px;
         padding: $tablet-spacing;
       }
@@ -176,6 +176,7 @@ button {
       }
       @include desktop-xl {
         width: 45%;
+        top: 20px;
       }
     }
   }
@@ -218,7 +219,7 @@ button {
       padding-bottom: 2*$mobile-spacing;
       @include tablet {
         position: absolute;
-        left: 43%;
+        left: 38%;
         bottom: 18%;
       }
       @include desktop {
@@ -255,7 +256,6 @@ button {
     &__contact {
       margin-bottom: 1.5*$mobile-spacing;
       @include tablet {
-        // margin-right: 0;
         margin-bottom: 0;
       }
       @include desktop {
@@ -263,11 +263,19 @@ button {
       }
     }
     &__contact:nth-child(2) {
+      @include tablet {
+        margin-right: 30px;
+      }
       @include desktop {
         margin-right: 80px;
       }
       @include desktop-xl {
         margin-right: 80px;
+      }
+    }
+    &__contact:nth-child(3) {
+      @include tablet {
+        margin-right: 8px;
       }
     }
     &__name {

@@ -102,7 +102,7 @@ button {
 }
 @media (min-width: 1280px) {
   .main-nav {
-    padding-left: 160px;
+    padding-left: 12.5vw;
   }
 }
 @media (min-width: 1440px) {
@@ -129,7 +129,7 @@ button {
 }
 @media (min-width: 1440px) {
   .main-nav__title {
-    margin-left: 4px;
+    margin-left: 0.3125vw;
   }
 }
 .main-nav__title--link {
@@ -233,7 +233,7 @@ button {
 }
 @media (min-width: 768px) {
   .hero__title {
-    font-size: 60px;
+    font-size: 3.75em;
     line-height: 72px;
     padding: 24px;
   }
@@ -250,6 +250,7 @@ button {
 @media (min-width: 1440px) {
   .hero__title {
     width: 45%;
+    top: 20px;
   }
 }
 
@@ -310,7 +311,7 @@ button {
 @media (min-width: 768px) {
   .footer__social {
     position: absolute;
-    left: 43%;
+    left: 38%;
     bottom: 18%;
   }
 }
@@ -367,6 +368,11 @@ button {
     margin-right: 60px;
   }
 }
+@media (min-width: 768px) {
+  .footer__contact:nth-child(2) {
+    margin-right: 30px;
+  }
+}
 @media (min-width: 1280px) {
   .footer__contact:nth-child(2) {
     margin-right: 80px;
@@ -375,6 +381,11 @@ button {
 @media (min-width: 1440px) {
   .footer__contact:nth-child(2) {
     margin-right: 80px;
+  }
+}
+@media (min-width: 768px) {
+  .footer__contact:nth-child(3) {
+    margin-right: 8px;
   }
 }
 @media (min-width: 768px) {

@@ -54,14 +54,14 @@ function displayComments(comments) {
     commentBlock.appendChild(commentText);
 
     
-    let deleteButton = document.createElement('button');
-    deleteButton.classList.add('comments__deleteBtn')
-    deleteButton.innerText = 'DELETE';
-    commentBlock.appendChild(deleteButton);
-    deleteButton.addEventListener('click', deleteComment);
-    function deleteComment(e) {
-        e.target.parentNode.parentNode.remove();
-    }
+    // let deleteButton = document.createElement('button');
+    // deleteButton.classList.add('comments__deleteBtn')
+    // deleteButton.innerText = 'DELETE';
+    // commentBlock.appendChild(deleteButton);
+    // deleteButton.addEventListener('click', deleteComment);
+    // function deleteComment(e) {
+    //     e.target.parentNode.parentNode.remove();
+    // }
     }) 
 }
 
