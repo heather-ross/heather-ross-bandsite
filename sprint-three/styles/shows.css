@@ -312,12 +312,8 @@
 
 .shows__content:first-of-type .shows__text {
   font-weight: 600;
-  text-transform: lowercase;
   font-size: 0.9em;
   line-height: 0.4em;
-}
-.shows__content:first-of-type .shows__text::first-line {
-  text-transform: capitalize;
 }
 @media (min-width: 768px) {
   .shows__content:first-of-type .shows__text {

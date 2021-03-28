@@ -8,7 +8,7 @@ function getShows() {
        displayShows(commentData);
     }) 
     .catch(err => {
-        alert("Please try again " + err);
+        console.error(err);
     })
 }
 getShows();
@@ -43,8 +43,11 @@ function displayShows(content) {
 
     let showsTextDate = document.createElement('p');
     showsTextDate.classList.add('shows__text');
-    showsTextDate.innerText = showContent.date;
-
+    showsTextDate.innerText = showContent.date.split(' ')
+    .map(letters => letters[0].toUpperCase() + letters.substr(1).toLowerCase())
+    .join(' ');
+    showContent.date[0].toUpperCase() + showContent.date.slice(1);
+    
     //Venue Wrap
     let showsVenueWrap = document.createElement('div');
     showsVenueWrap.classList.add('shows__content');
@@ -84,5 +87,7 @@ function displayShows(content) {
     showsLocationWrap.appendChild(showsHeadingLocation);
     showsLocationWrap.appendChild(showsTextLocation);
     showsRow.appendChild(showsBtn);
+
     }) 
 }
+

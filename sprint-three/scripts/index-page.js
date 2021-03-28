@@ -11,7 +11,7 @@ function getComments() {
        displayComments(commentData);
     }) 
     .catch(err => {
-        alert("Please try again " + err);
+        console.error(err);
     })
 }
 getComments();
@@ -36,35 +36,21 @@ function displayComments(comments) {
     let commentName = document.createElement('h5');
     commentName.classList.add('comments__block--name');
     commentName.innerText = comment.name;
-    // commentContainer.appendChild(commentBlock);
     commentBlock.appendChild(commentName);
 
     let commentDate = document.createElement('date');
     commentDate.classList.add('comments__block--date');
     const today = new Date(comment.timestamp);
     commentDate.innerText = today.toLocaleDateString();
-    // commentContainer.appendChild(commentBlock);
     commentBlock.appendChild(commentDate);
 
     let commentText = document.createElement('p');
     commentText.classList.add('comments__block--comment');
     commentText.innerText = comment.comment;
-    commentStream.appendChild(commentContainer);
-    // commentContainer.appendChild(commentBlock);  
+    commentStream.appendChild(commentContainer); 
     commentBlock.appendChild(commentText);
-
-    
-    // let deleteButton = document.createElement('button');
-    // deleteButton.classList.add('comments__deleteBtn')
-    // deleteButton.innerText = 'DELETE';
-    // commentBlock.appendChild(deleteButton);
-    // deleteButton.addEventListener('click', deleteComment);
-    // function deleteComment(e) {
-    //     e.target.parentNode.parentNode.remove();
-    // }
     }) 
 }
-
 const commentForm = document.getElementById('commentForm');
 commentForm.addEventListener('submit', function(e) {
     e.preventDefault();
@@ -77,7 +63,7 @@ commentForm.addEventListener('submit', function(e) {
         getComments();
     })
     .catch(err => {
-        alert("Please try again " + err);
+        console.error(err);
     })
     e.target.reset();
 })

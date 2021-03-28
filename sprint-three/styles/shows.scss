@@ -107,8 +107,7 @@
     padding: $tablet-spacing;
   }
   @include desktop {
-    display: flex;
-    justify-content: space-between;
+    @include flex-container($spacing: space-between);
     padding: 1.5*$desktop-spacing 9.375em $desktop-spacing 9.375em;
   }
   @include desktop-xl {
@@ -230,12 +229,8 @@
 }
 .shows__content:first-of-type .shows__text {
   font-weight: 600;
-  text-transform: lowercase;
   font-size: 0.9em;
   line-height: 0.4em;
-  &::first-line {
-    text-transform: capitalize;
-  }
   @include tablet {
     font-size: 1em;
   }

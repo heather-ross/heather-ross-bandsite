@@ -186,8 +186,7 @@
     padding: $desktop-spacing $desktop-xl-side-spacing 0.5*$desktop-spacing $desktop-xl-side-spacing;
   }
   &__form-wrap {
-    display: flex;
-    justify-content: space-between;
+    @include flex-container($spacing: space-between);
     border-bottom: 1px solid $grey-med;
     padding: $mobile-spacing 0;
     position: relative;
