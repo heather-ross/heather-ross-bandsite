@@ -286,11 +286,6 @@
     font-size: 0.75em;
   }
 }
-@media (min-width: 1280px) {
-  .shows__row:first-of-type .shows__heading {
-    margin-left: 20px;
-  }
-}
 @media (min-width: 1440px) {
   .shows__row:first-of-type .shows__heading {
     margin-left: 10px;
