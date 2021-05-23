@@ -19,41 +19,37 @@ let commentsArray = [
 let commentStream = document.querySelector('.comments__stream'); 
 
 function displayComments(comment) {
-        
+
     let commentContainer = document.createElement('article');
     commentContainer.classList.add('comments__container');
-    
-    let commentAvatar = document.createElement('div');
-    commentAvatar.classList.add('comments__avatar');
-    commentContainer.appendChild(commentAvatar);
 
-    let commentBlock = document.createElement('div');
-    commentBlock.classList.add('comments__block');
-    commentContainer.appendChild(commentBlock);
+    let commentAvatar = document.createElement('div');
+    commentAvatar.classList.add('.comments__avatar');
+    commentContainer.appendChild(commentAvatar);
 
     let commentName = document.createElement('h5');
     commentName.classList.add('comments__block--name');
     commentName.innerText = comment.userName;
-    commentContainer.appendChild(commentBlock);
-    commentBlock.appendChild(commentName);
+    commentStream.appendChild(commentContainer);
+    commentContainer.appendChild(commentName);
 
     let commentDate = document.createElement('date');
     commentDate.classList.add('comments__block--date');
     commentDate.innerText = comment.postDate;
-    commentContainer.appendChild(commentBlock);
-    commentBlock.appendChild(commentDate);
+    commentStream.appendChild(commentContainer);
+    commentContainer.appendChild(commentDate);
 
     let commentText = document.createElement('p');
     commentText.classList.add('comments__block--comment');
     commentText.innerText = comment.userComment;
     commentStream.appendChild(commentContainer);
-    commentContainer.appendChild(commentBlock);  
-    commentBlock.appendChild(commentText);
+    commentContainer.appendChild(commentText);  
 }
 
 function addNewComment() {
-    commentStream.innerHTML = '';
-    //for every comment in array, run ^^ displayComments function
+    // commentStream.innerHTML = '';
+    while (commentStream.firstChild) commentStream.firstChild.remove();
+    //for every comment in commentsArray, run ^^ displayComments ^^function 
     commentsArray.forEach(function(commentsArray) { 
         displayComments(commentsArray);
     }) 
@@ -64,15 +60,14 @@ const today = new Date();
 const commentForm = document.getElementById('commentForm');
 commentForm.addEventListener('submit', function(e) {
     e.preventDefault();
-    const userNameValue = e.target.userNameInput.value; //reference 'Forms in Detail' page synapse
+    const userNameValue = e.target.userNameInput.value; //reference Forms in Detail page synapse
     const addCommentValue = e.target.commentInput.value;
-    const date = (today.getMonth()+1)+'/'+today.getDate()+'/'+today.getFullYear(); //<--This was the easiest thing I did all week!
-    commentsArray.unshift({ //newest comment 'pushed' to front of array
+    const date = (today.getMonth()+1)+'/'+today.getDate()+'/'+today.getFullYear(); //research JS current date
+    commentsArray.unshift({ //newest comment at top
         userName: userNameValue,
         postDate: date,
         userComment: addCommentValue,
     })
-    e.target.reset();// resets list to only default comments on page when reloaded
+    e.target.remove();
     addNewComment();
 })
-

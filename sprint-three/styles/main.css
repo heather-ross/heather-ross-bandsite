@@ -381,6 +381,7 @@
 }
 .comments__button:hover {
   background-color: #000000;
+  cursor: pointer;
 }
 @media (min-width: 768px) {
   .comments__button {
@@ -477,11 +478,11 @@
   }
 }
 .comments__block--delete {
-  width: 30%;
-  height: 40px;
+  cursor: pointer;
+  height: 18px;
   padding-top: 4px;
-  padding-bottom: 4px;
-  margin-left: 346px;
+  padding-bottom: 6px;
+  margin-left: 26rem;
 }
 
 input, textarea {

@@ -36,6 +36,9 @@
     justify-content: space-between;
   }
 }
+.hero-shows::after {
+  bottom: 0;
+}
 @media (min-width: 1440px) {
   .hero-shows {
     max-height: 41.875em;

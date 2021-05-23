@@ -257,6 +257,7 @@
     }    
     &:hover {
       background-color: #000000;
+      cursor: pointer;
     }
     @include tablet {
       position: absolute;
@@ -332,12 +333,12 @@
         line-height: 20px;
       }
     }
-    &--delete {
-      width: 30%;
-      height: 40px;
+    &--delete  {
+      cursor: pointer;
+      height: 18px;
       padding-top: 4px;
-      padding-bottom: 4px;
-      margin-left: 346px;
+      padding-bottom: 6px;
+      margin-left: 26rem; 
     }
   }
 }

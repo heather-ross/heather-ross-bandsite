@@ -16,6 +16,9 @@
     align-items: center;
     justify-content: space-between;
   }
+  &::after {
+    bottom: 0;
+  }
   @include desktop-xl {
     max-height: 41.875em;
   }

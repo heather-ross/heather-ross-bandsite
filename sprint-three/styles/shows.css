@@ -274,6 +274,7 @@
 }
 .shows__button:hover {
   background-color: #000000;
+  cursor: pointer;
 }
 .shows__button:focus {
   outline: #000000;

@@ -59,11 +59,11 @@
       <h2 class="comments__title">Join the Conversation</h2>
       <div class="comments__form-wrap">
         <div class="comments__avatar comments__avatar--form"></div>
-        <form id="commentForm" class="comments__form" action="">
-          <label for="userName"><h5 class="comments__label">NAME</h5></label>
-          <input id="userName"  class="comments__user-name" type="text"  name="userNameInput" autocomplete="off" placeholder="Enter your name">   
-          <label for="comment"><h5 class="comments__label">COMMENT</h5></label>
-          <textarea id="addComment" class="comments__add-comment" type="text" name="commentInput" autocomplete="off" placeholder="Add a new comment"></textarea>
+        <form id="commentForm" class="comments__form" method="post">
+          <label for="userNameInput"><h5 class="comments__label">NAME</h5></label>
+          <input id="userNameInput"  class="comments__user-name" type="text"  name="userNameInput" autocomplete="off" placeholder="Enter your name" required>   
+          <label for="commentInput"><h5 class="comments__label">COMMENT</h5></label>
+          <textarea id="commentInput" class="comments__add-comment" type="text" name="commentInput" autocomplete="off" placeholder="Add a new comment" required></textarea>
               <button id="commentBtn" class="comments__button" type="submit">COMMENT</button>
          </form>
       </div>
@@ -103,6 +103,7 @@
     <p class="footer__copy"><a class="footer__copy--link" href="#">Copyright The Bees Knees</a> © 2018<br class="footer__copy--break">
     All Rights Reserved</p>
   </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js" type="text/javascript"></script>
   <script src="./scripts/index-page.js"></script>
 </body>
 </html>

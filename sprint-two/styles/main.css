@@ -285,6 +285,7 @@
   justify-content: space-between;
   border-bottom: 1px solid #E1E1E1;
   padding: 16px 0;
+  position: relative;
 }
 @media (min-width: 768px) {
   .comments__form-wrap {
@@ -295,7 +296,11 @@
   .comments__form-wrap, .comments__stream {
     width: 520px;
     margin: auto;
+    box-sizing: border-box;
   }
+}
+.comments__form {
+  width: 80%;
 }
 @media (min-width: 768px) {
   .comments__stream {
@@ -336,19 +341,13 @@
 @media (min-width: 768px) {
   .comments__button {
     position: absolute;
-    right: 124px;
+    right: 0;
     width: 159px;
   }
 }
 @media (min-width: 1280px) {
   .comments__button {
-    right: 380px;
     width: 160px;
-  }
-}
-@media (min-width: 1440px) {
-  .comments__button {
-    right: 460px;
   }
 }
 .comments__button:focus {
@@ -408,7 +407,7 @@
 }
 
 input, textarea {
-  width: 224px;
+  width: 100%;
   padding: 1.25em;
   margin: 0.5em 0;
   background-color: #FAFAFA;
@@ -421,7 +420,7 @@ input, textarea {
 }
 @media (min-width: 768px) {
   input, textarea {
-    width: 59vw;
+    width: 460px;
   }
 }
 @media (min-width: 1280px) {

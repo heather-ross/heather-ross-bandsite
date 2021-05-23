@@ -50,9 +50,9 @@ function displayComments(comments) {
     commentStream.appendChild(commentContainer); 
     commentBlock.appendChild(commentText);
 
-    let commentDelete = document.createElement('button');
+    let commentDelete = document.createElement('img');
     commentDelete.classList.add('comments__block--delete');
-    commentDelete.innerText = 'DELETE';
+    commentDelete.setAttribute('src', './assets/icons/delete.png')
     commentBlock.appendChild(commentDelete);
     commentDelete.addEventListener('click', handleDelete);
     function handleDelete(e) {
@@ -61,6 +61,9 @@ function displayComments(comments) {
         .then(() => {
             location.reload() 
             return true;
+        })
+        .catch(err => {
+            console.error(err);
         })
     }
     })  
@@ -82,7 +85,3 @@ commentForm.addEventListener('submit', function(e) {
     })
     e.target.reset();
 })
-
-
-// document.querySelector('.comments__block--delete').addEventListener('click', deleteComment);
-

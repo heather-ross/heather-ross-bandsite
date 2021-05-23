@@ -100,12 +100,11 @@ let showsBtn = document.createElement('button');
     showsLocationWrap.appendChild(showsHeadingLocation);
     showsLocationWrap.appendChild(showsTextLocation);
     showsRow.appendChild(showsBtn);
-
 }
 
  function addNewShow() { 
-    showsArray.forEach(function(show) { 
-        displayShows(show);
+    showsArray.forEach(function(showsArray) { 
+        displayShows(showsArray);
     }) 
 }
 addNewShow();
