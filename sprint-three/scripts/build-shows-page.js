@@ -4,8 +4,8 @@ const apiKey = "?api_key=bd8144bc-4fe8-4d7d-a292-4c48539cecb5";
 function getShows() {
     axios.get(apiUrl + apiKey)
     .then(response => {
-       let commentData = response.data;
-       displayShows(commentData);
+       let showData = response.data;
+       displayShows(showData);
     }) 
     .catch(err => {
         console.error(err);
@@ -43,11 +43,14 @@ function displayShows(content) {
 
     let showsTextDate = document.createElement('p');
     showsTextDate.classList.add('shows__text');
-    showsTextDate.innerText = showContent.date.split(' ')
-    .map(letters => letters[0].toUpperCase() + letters.substr(1).toLowerCase())
-    .join(' ');
-    showContent.date[0].toUpperCase() + showContent.date.slice(1);
-     
+
+
+    showsTextDate.innerText = new Date(showContent.date).toDateString();   //to get all dates to appear in the correct order
+    // showContent.date.split(' ')
+    // .map(letters => letters[0].toUpperCase() + letters.substr(1).toLowerCase())
+    // .join(' ');
+    // showContent.date[0].toUpperCase() + showContent.date.slice(1);
+   
         
     //Venue Wrap
     let showsVenueWrap = document.createElement('div');

@@ -49,8 +49,23 @@ function displayComments(comments) {
     commentText.innerText = comment.comment;
     commentStream.appendChild(commentContainer); 
     commentBlock.appendChild(commentText);
-    }) 
+
+    let commentDelete = document.createElement('button');
+    commentDelete.classList.add('comments__block--delete');
+    commentDelete.innerText = 'DELETE';
+    commentBlock.appendChild(commentDelete);
+    commentDelete.addEventListener('click', handleDelete);
+    function handleDelete(e) {
+        e.preventDefault();
+        axios.delete(`${apiUrl}/${comment.id}${apiKey}`)
+        .then(() => {
+            location.reload() 
+            return true;
+        })
+    }
+    })  
 }
+
 const commentForm = document.getElementById('commentForm');
 commentForm.addEventListener('submit', function(e) {
     e.preventDefault();
@@ -67,4 +82,7 @@ commentForm.addEventListener('submit', function(e) {
     })
     e.target.reset();
 })
+
+
+// document.querySelector('.comments__block--delete').addEventListener('click', deleteComment);
 

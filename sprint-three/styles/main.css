@@ -476,6 +476,13 @@
     line-height: 20px;
   }
 }
+.comments__block--delete {
+  width: 30%;
+  height: 40px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  margin-left: 346px;
+}
 
 input, textarea {
   width: 224px;
