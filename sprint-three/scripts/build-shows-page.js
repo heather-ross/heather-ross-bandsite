@@ -5,6 +5,7 @@ function getShows() {
     axios.get(apiUrl + apiKey)
     .then(response => {
        let showData = response.data;
+    //    console.log(response.data)
        displayShows(showData);
     }) 
     .catch(err => {
@@ -12,6 +13,7 @@ function getShows() {
     })
 }
 getShows();
+
 
     let showsContainer = document.querySelector('.shows'); 
 
@@ -43,9 +45,7 @@ function displayShows(content) {
 
     let showsTextDate = document.createElement('p');
     showsTextDate.classList.add('shows__text');
-    showsTextDate.innerText = new Date(showContent.date - 0).toDateString('','','','');  //to get all dates to appear in the correct order
-    
-   
+    showsTextDate.innerText = new Date(showContent.date - 0).toDateString(); 
         
     //Venue Wrap
     let showsVenueWrap = document.createElement('div');
@@ -74,6 +74,10 @@ function displayShows(content) {
     let showsBtn = document.createElement('button');
     showsBtn.classList.add('shows__button');
     showsBtn.innerText = "BUY TICKETS";
+    showsBtn.onclick = () => {
+        modal.style.display = "block";
+      }
+  
 
     showsWrap.appendChild(showsRow);
     showsRow.appendChild(showsDateWrap);
@@ -86,7 +90,20 @@ function displayShows(content) {
     showsLocationWrap.appendChild(showsHeadingLocation);
     showsLocationWrap.appendChild(showsTextLocation);
     showsRow.appendChild(showsBtn);
-
+    
     }) 
 }
-
+let modal = document.getElementById("modal");
+let modalCloseX = document.getElementsByClassName("modal__close")[0];
+let modalCloseBtn = document.getElementsByClassName("modal__closeBtn")[0];
+modalCloseX.onclick = () => {
+  modal.style.display = "none";
+}
+modalCloseBtn.onclick = () => {
+    modal.style.display = "none";
+  }
+window.onclick = (e) => {
+  if (e.target == modal) {
+    modal.style.display = "none";
+  }
+}
