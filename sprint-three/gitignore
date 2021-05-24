@@ -2,4 +2,4 @@
     *.css.map
     *.css
     **/.vscode/
-    **/.DS_Store/
+    **/.DS_Store

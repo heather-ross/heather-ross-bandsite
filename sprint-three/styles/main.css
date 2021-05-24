@@ -244,7 +244,7 @@
 }
 @media (min-width: 768px) {
   .gallery__img {
-    max-width: 224px;
+    max-width: 29vw;
     margin: 12px;
   }
 }

@@ -153,7 +153,8 @@
     margin-top: 16px;
     filter: grayscale(100%);
     @include tablet {
-      max-width: 224px;
+      // max-width: 224px;
+      max-width: 29vw;
       margin: 12px;
     }
     @include desktop {
