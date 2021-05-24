@@ -1,7 +1,7 @@
 const apiUrl = "https://project-1-api.herokuapp.com/comments";
 const apiKey = "?api_key=bd8144bc-4fe8-4d7d-a292-4c48539cecb5";
 
-function getComments() {
+const getComments = () => {
     axios.get(apiUrl + apiKey)
         .then(response => {
             let commentData = response.data;
@@ -18,9 +18,9 @@ getComments();
 
 let commentStream = document.querySelector('.comments__stream');
 
-function displayComments(comments) {
+const displayComments = (comments) => {
 
-    comments.forEach(function (comment) {
+    comments.forEach(comment => {
 
         let commentContainer = document.createElement('article');
         commentContainer.classList.add('comments__container');
@@ -53,7 +53,6 @@ function displayComments(comments) {
         let commentDelete = document.createElement('img');
         commentDelete.classList.add('comments__block--delete');
         commentDelete.setAttribute('src', './assets/icons/delete-x.png')
-        // commentDelete.innerText = 'DELETE';
         commentBlock.appendChild(commentDelete);
         commentDelete.addEventListener('click', handleDelete);
         function handleDelete(e) {

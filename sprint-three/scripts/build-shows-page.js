@@ -1,11 +1,10 @@
 const apiUrl = "https://project-1-api.herokuapp.com/showdates";
 const apiKey = "?api_key=bd8144bc-4fe8-4d7d-a292-4c48539cecb5";
 
-function getShows() {
+const getShows = () => {
     axios.get(apiUrl + apiKey)
     .then(response => {
        let showData = response.data;
-    //    console.log(response.data)
        displayShows(showData);
     }) 
     .catch(err => {
@@ -13,7 +12,6 @@ function getShows() {
     })
 }
 getShows();
-
 
     let showsContainer = document.querySelector('.shows'); 
 
@@ -27,8 +25,7 @@ getShows();
     showsContainer.appendChild(showsTitle);
     showsContainer.appendChild(showsWrap);
 
-
-function displayShows(content) {    
+const displayShows = (content) => {    
     
     content.forEach(showContent => {
           
@@ -77,7 +74,6 @@ function displayShows(content) {
     showsBtn.onclick = () => {
         modal.style.display = "block";
       }
-  
 
     showsWrap.appendChild(showsRow);
     showsRow.appendChild(showsDateWrap);
