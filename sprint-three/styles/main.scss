@@ -153,7 +153,6 @@
     margin-top: 16px;
     filter: grayscale(100%);
     @include tablet {
-      // max-width: 224px;
       max-width: 29vw;
       margin: 12px;
     }
@@ -162,7 +161,6 @@
       margin: 10px;
     }
     @include desktop-xl {
-      max-width: 344px; 
       margin: 12px;
     }
     &:hover {
