@@ -1,0 +1,5 @@
+#Ignore 
+    *.css.map
+    *.css
+    **/.vscode/
+    **/.DS_Store/

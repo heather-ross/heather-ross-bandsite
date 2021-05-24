@@ -284,7 +284,7 @@
     &:hover,
     &:focus {
       color: #000;
-      text-decoration: none;
+      cursor: pointer;
     }
   }
   &__closeBtn {
@@ -292,6 +292,7 @@
     &:hover,
     &:focus {
       background-color: #000;
+      cursor: pointer;
     }
   } 
 }
