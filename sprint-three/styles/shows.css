@@ -336,7 +336,7 @@
 .modal__content-box {
   background-color: white;
   margin: auto;
-  padding: 20px;
+  padding: 2rem;
   border: 1px solid #888;
   width: 50%;
   max-width: 450px;
@@ -344,15 +344,20 @@
   top: 30%;
   position: relative;
 }
+@media (min-width: 768px) {
+  .modal__content-box {
+    padding: 1rem 2rem 2rem 2rem;
+  }
+}
 .modal__content {
   text-align: center;
   margin: auto;
-  padding: 3rem 2rem 2rem 2rem;
+  padding: 1rem 2rem;
   max-width: 300px;
 }
 @media (min-width: 768px) {
   .modal__content {
-    padding: 1.75rem;
+    padding: 0rem 1.75rem;
   }
 }
 .modal__text {
@@ -368,6 +373,7 @@
 .modal__close {
   color: #aaaaaa;
   position: absolute;
+  top: 1vh;
   right: 1.5rem;
   font-size: 28px;
   font-weight: bold;
