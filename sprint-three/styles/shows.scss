@@ -85,6 +85,10 @@
     max-height: 7.5em;
     margin: auto;
     z-index: 2;
+    @include mobile-large {
+      width: 70%;
+      margin: 0 $mobile-spacing;
+    }
     @include tablet {
       max-height: 143px;
       width: 57%;
@@ -256,18 +260,14 @@
     height: 30%;
     top: 30%;
     position: relative;
-    @include tablet {
-      padding: 1rem 2rem 2rem 2rem;
-    }
   }
   &__content {
+    @include flex-container($align: center, $spacing: center);
+    flex-direction: column;
     text-align: center;
     margin: auto;
-    padding: 1rem 2rem;
+    padding-top: 2rem ;
     max-width: 300px;
-    @include tablet {
-      padding: 0rem 1.75rem;
-    }
   }
   &__text {
     font-size: 1.25rem;
@@ -292,7 +292,13 @@
     }
   }
   &__closeBtn {
-    max-width: 180px;
+    max-width: 140px;
+    // position: relative;
+    // display:block;
+    // margin: auto;
+    @include mobile-large {
+      max-width: 180px;
+    }
     &:hover,
     &:focus {
       background-color: #000;

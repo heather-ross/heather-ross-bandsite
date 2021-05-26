@@ -1,8 +1,21 @@
 @use './partials/typography' as *;
 @use './partials/variables' as *;
 @use './partials/mixins' as *;
-.hero__home {
+
+.hero-home {
   background-image: url(../assets/images/hero-home.jpg);
+  @include tablet {
+    background-image: none;
+  }
+}
+.hero__video {
+  display: none;
+  @include tablet {
+    display: block;
+    position: absolute;
+    min-width: 100%;
+    z-index: -1;
+  }
 }
 .about {
   padding: $mobile-spacing;
@@ -336,11 +349,33 @@
     &--delete  {
       cursor: pointer;
       height: 10px;
-      padding: 6px;
+      // padding: 6px;
       margin: 0;
       position: absolute;
-      bottom: 0.5rem;
+      bottom: 0.6rem;
+      opacity: 0.4;
+      &:hover {
+        opacity: 1;
+        transition: ease 0.1s;
+      }
+    }
+    &--like  {
+      cursor: pointer;
+      height: 14px;
+      // padding: 6px;
+      margin: 0;
+      position: absolute;
+      bottom: 0.47rem;
       right: 0;
+    }
+    &--likes  {
+     font-size: 0.9rem;
+     color: $grey-dark;
+      // padding: 6px;
+      margin: 0;
+      position: absolute;
+      bottom: 0.35rem;
+      right: 1.3rem;
     }
   }
 }

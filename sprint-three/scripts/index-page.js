@@ -60,12 +60,32 @@ const displayComments = (comments) => {
             axios.delete(`${apiUrl}/${comment.id}${apiKey}`)
                 .then(() => {
                     location.reload()
-                    return true;
                 })
                 .catch(err => {
                     console.error(err);
                 })
         }
+        let commentLike = document.createElement('img');
+        commentLike.classList.add('comments__block--like');
+        commentLike.setAttribute('src', './assets/icons/heart.png')
+        commentBlock.appendChild(commentLike);
+        commentLike.addEventListener('click', handleLike);
+        
+        let commentLikes = document.createElement('p');
+        commentLikes.classList.add('comments__block--likes');
+        commentLikes.innerText = comment.likes;
+        commentBlock.appendChild(commentLikes);
+        function handleLike(e) {
+            e.preventDefault();
+            axios.put(`${apiUrl}/${comment.id}/like${apiKey}`)
+                .then(() => {
+                    location.reload();
+                })
+                .catch(err => {
+                    console.error(err);
+                })    
+        }
+        
     })
 }
 const commentForm = document.getElementById('commentForm');

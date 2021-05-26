@@ -16,8 +16,25 @@
   font-weight: 400;
   font-style: normal;
 }
-.hero__home {
+.hero-home {
   background-image: url(../assets/images/hero-home.jpg);
+}
+@media (min-width: 768px) {
+  .hero-home {
+    background-image: none;
+  }
+}
+
+.hero__video {
+  display: none;
+}
+@media (min-width: 768px) {
+  .hero__video {
+    display: block;
+    position: absolute;
+    min-width: 100%;
+    z-index: -1;
+  }
 }
 
 .about {
@@ -480,11 +497,30 @@
 .comments__block--delete {
   cursor: pointer;
   height: 10px;
-  padding: 6px;
   margin: 0;
   position: absolute;
-  bottom: 0.5rem;
+  bottom: 0.6rem;
+  opacity: 0.4;
+}
+.comments__block--delete:hover {
+  opacity: 1;
+  transition: ease 0.1s;
+}
+.comments__block--like {
+  cursor: pointer;
+  height: 14px;
+  margin: 0;
+  position: absolute;
+  bottom: 0.47rem;
   right: 0;
+}
+.comments__block--likes {
+  font-size: 0.9rem;
+  color: #AFAFAF;
+  margin: 0;
+  position: absolute;
+  bottom: 0.35rem;
+  right: 1.3rem;
 }
 
 input, textarea {

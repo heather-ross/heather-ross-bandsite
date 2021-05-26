@@ -139,8 +139,9 @@ button {
     @include background-img;
     @include flex-container($align: center);
     width: 100%;
-    height: 183px;
+    min-height: 15em;
     position: relative;
+    overflow: hidden;
     @include tablet {
       min-height: 25em;
     }
@@ -157,6 +158,7 @@ button {
       height: 100%;
       background-color: $overlay-hero;
     }
+
     &__title {
       z-index: 5;
       color: white;
