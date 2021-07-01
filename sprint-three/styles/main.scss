@@ -1,15 +1,18 @@
-@use './partials/typography' as *;
-@use './partials/variables' as *;
-@use './partials/mixins' as *;
+@use './partials/typography'as *;
+@use './partials/variables'as *;
+@use './partials/mixins'as *;
 
 .hero-home {
   background-image: url(../assets/images/hero-home.jpg);
+
   @include tablet {
     background-image: none;
   }
 }
+
 .hero__video {
   display: none;
+
   @include tablet {
     display: block;
     position: absolute;
@@ -17,369 +20,469 @@
     z-index: -1;
   }
 }
+
 .about {
   padding: $mobile-spacing;
+
   @include mobile-large {
     padding: $tablet-spacing;
   }
+
   @include desktop {
     padding: $tablet-spacing 160px;
   }
+
   @include desktop-xl {
     padding: $tablet-spacing $desktop-xl-side-spacing;
   }
+
   &__title {
     line-height: 2em;
     padding-bottom: 12px;
     font-weight: 900;
+
     @include tablet {
       font-size: 2.25em;
     }
+
     @include desktop {
       padding: 6px 0 28px 0;
     }
+
     @include desktop-xl {
       padding-bottom: 28px;
     }
   }
+
   &__img {
     width: 90vw;
     display: block;
     margin: auto;
+
     @include tablet {
       width: 94vw;
       min-height: 362px;
     }
+
     @include desktop {
       max-width: 62vw;
     }
+
     @include desktop-xl {
       min-height: 450px;
     }
   }
+
   &__content-wrap {
     @include desktop-xl {
       max-width: 1080px;
       margin: auto;
     }
   }
+
   &__quote {
     font-weight: 600;
+
     @include tablet {
       @include about-h4;
     }
+
     @include desktop {
       padding-left: 2*$desktop-spacing;
       width: 73%;
     }
+
     @include desktop-xl {
       padding-left: 90px;
     }
-    &--name {
+
+    &-name {
       font-weight: 600;
       font-size: 0.875em;
       padding-top: 6px;
+
       @include tablet {
         font-size: 1em;
       }
+
       @include desktop {
         padding-left: 2*$desktop-spacing;
       }
+
       @include desktop-xl {
         padding-left: 90px;
       }
     }
   }
+
   &__content-title {
     font-weight: 600;
     padding-top: 0.5*$mobile-spacing;
+
     @include tablet {
       @include about-h4;
       margin-bottom: 0;
     }
+
     @include desktop {
       padding-left: 2*$desktop-spacing;
     }
+
     @include desktop-xl {
       padding-left: 90px;
     }
   }
+
   &__content {
     @include tablet {
       @include flex-container($align: flex-start, $spacing: space-between);
     }
+
     @include desktop {
       @include flex-container($spacing: flex-start);
       padding: 0 2*$desktop-spacing;
     }
+
     @include desktop-xl {
       @include flex-container($align: flex-start, $spacing: space-evenly);
       padding-left: 73px;
     }
+
     &--text {
       line-height: 1.5em;
       padding-right: 1.5em;
+
       @include desktop {
         padding-right: 1.75em;
       }
+
       @include desktop-xl {
         width: 44%;
       }
     }
   }
 }
+
 .gallery {
   background-color: $grey-light;
   padding: 1.5*$mobile-spacing $mobile-spacing;
+
   @include tablet {
-    padding: $tablet-spacing 10px $mobile-spacing; 
+    padding: $tablet-spacing 10px $mobile-spacing;
   }
+
   @include desktop {
     padding: 20px 120px;
   }
+
   @include desktop-xl {
     padding: 20px 160px 10px 160px;
   }
+
   &__title {
     @include tablet {
       padding: 10px 13.25px;
     }
+
     @include desktop {
       padding: 20px 40px;
     }
+
     @include desktop-xl {
       padding: 20px 0 40px 18px;
     }
   }
+
   &__images {
     @include flex-container($spacing: center, $wrap: wrap);
     padding-bottom: $mobile-spacing;
+
     @include tablet {
       padding-bottom: 0.5*$tablet-spacing;
     }
+
     @include desktop-xl {
       padding: $tablet-spacing 0;
     }
   }
+
   &__img {
     max-width: 90vw;
     margin-top: 16px;
     filter: grayscale(100%);
+
     @include tablet {
       max-width: 29vw;
       margin: 12px;
     }
+
     @include desktop {
       max-width: 24vw;
       margin: 10px;
     }
+
     @include desktop-xl {
       margin: 12px;
     }
+
     &:hover {
       filter: none;
     }
   }
 }
+
 .comments {
   padding: 1.5*$mobile-spacing $mobile-spacing 2.5*$mobile-spacing $mobile-spacing;
   max-width: 100vw;
   box-sizing: border-box;
+
   @include mobile-large {
     padding: $tablet-spacing;
   }
+
   @include mobile-large {
     padding-top: 1.5*$tablet-spacing;
   }
+
   @include desktop {
     padding: $desktop-spacing 160px 0.5*$desktop-spacing 160px;
   }
+
   @include desktop-xl {
     padding: $desktop-spacing $desktop-xl-side-spacing 0.5*$desktop-spacing $desktop-xl-side-spacing;
   }
+
   &__form-wrap {
     @include flex-container($spacing: space-between);
     border-bottom: 1px solid $grey-med;
     padding: $mobile-spacing 0;
     position: relative;
+
     @include mobile-large {
       padding: 0 $mobile-spacing;
     }
+
     @include tablet {
       padding-bottom: 86px;
     }
   }
-  &__form-wrap, &__stream {
+
+  &__form-wrap,
+  &__stream {
     @include tablet {
       max-width: 520px;
       margin: auto;
       box-sizing: border-box;
     }
   }
+
   &__form {
     width: 80%;
+
     @include tablet {
       margin-right: 40px;
-   }   
+    }
+
     @include desktop-xl {
       margin-right: 50px;
     }
   }
+
   &__avatar {
     background-image: none;
     background-color: $grey-med;
     border-radius: 50%;
     height: 40px;
     min-width: 40px;
+
     @include tablet {
-       margin-left: -15px;
+      margin-left: -15px;
     }
+
     @include desktop-xl {
       margin-left: -20px;
     }
-    &--form {
+
+    &-form {
       background-image: url(../assets/images/mohan-muruge.jpg);
       @include background-img;
       background-position: left;
       margin-top: 40px;
       height: 48px;
       min-width: 48px;
+
       @include tablet {
         margin-left: -15px;
-     }
+      }
+
       @include desktop-xl {
         margin-left: -20px;
       }
     }
   }
+
   &__label {
     color: $grey-dark;
     font-weight: 600;
     margin-top: 1.25em;
   }
+
   &__user-name {
     height: 48px;
   }
+
   &__add-comment {
     height: 90px;
   }
+
   &__button {
     @include mobile-large {
       width: 90%;
-    }    
+    }
+
     &:hover {
       background-color: #000000;
       cursor: pointer;
     }
+
     @include tablet {
       position: absolute;
       right: 0;
       width: 159px;
     }
+
     @include desktop {
       width: 145px;
       right: 1.75em;
     }
+
     @include desktop-xl {
       width: 160px;
       right: 0;
     }
+
     &:focus {
       outline: #000000;
     }
   }
+
   &__stream {
     @include mobile-large {
       padding: 0 $mobile-spacing;
     }
+
     @include tablet {
       padding-bottom: 0.5*$desktop-spacing;
     }
   }
+
   &__container {
     @include flex-container($spacing: flex-start);
     border-bottom: 1px solid $grey-med;
     padding: 1.5*$mobile-spacing 0 10px 0;
     position: relative;
+
     @include mobile-large {
       padding: $tablet-spacing;
     }
+
     @include tablet {
       padding: 24px 0 6px 0;
     }
   }
+
   &__block {
     max-width: 210px;
     padding-left: $mobile-spacing;
+
     @include mobile-large {
       width: 100%;
       max-width: 400px;
     }
-    &--name, &--date {
+
+    &-name,
+    &-date {
       display: inline-block;
       vertical-align: middle;
+
       @include tablet {
         vertical-align: baseline;
         font-size: 1em;
       }
     }
-    &--name {
+
+    &-name {
       padding-bottom: 6px;
     }
-    &--date {
+
+    &-date {
       color: $grey-dark;
       font-size: 0.8125em;
       position: absolute;
       right: 16px;
-     
+
       @include tablet {
         position: static;
         padding-left: 10px;
         font-size: 0.875em;
       }
     }
-    &--comment {
+
+    &-comment {
       margin-top: 6px;
       padding-bottom: 2rem;
+      font-size: 0.9rem;
+      line-height: 1.15rem;
+      letter-spacing: 0.03rem;
+
       @include tablet {
         margin-top: 0;
         line-height: 20px;
       }
     }
-    &--delete  {
+
+    &-delete,
+    &-like,
+    &-likes {
+      margin: 0;
+      position: absolute;
+    }
+
+    &-delete {
       cursor: pointer;
       height: 10px;
-      // padding: 6px;
-      margin: 0;
       position: absolute;
       bottom: 0.6rem;
       opacity: 0.4;
+    }
+
+    &-like {
+      cursor: pointer;
+      height: 14px;
+      bottom: 0.47rem;
+      right: 0;
+      opacity: 0.6;
+    }
+
+    &-delete,
+    &-like {
       &:hover {
         opacity: 1;
         transition: ease 0.1s;
       }
     }
-    &--like  {
-      cursor: pointer;
-      height: 14px;
-      // padding: 6px;
-      margin: 0;
-      position: absolute;
-      bottom: 0.47rem;
-      right: 0;
-    }
-    &--likes  {
-     font-size: 0.9rem;
-     color: $grey-dark;
-      // padding: 6px;
-      margin: 0;
-      position: absolute;
+
+    &-likes {
+      font-size: 0.9rem;
+      color: $grey-dark;
       bottom: 0.35rem;
       right: 1.3rem;
     }
   }
 }
-input, textarea {
+
+input,
+textarea {
   width: 224px;
   padding: 1.25em;
   margin: 0.5em 0;
@@ -390,24 +493,30 @@ input, textarea {
   box-sizing: border-box;
   font-family: 'Avenir', 'Roboto', sans-serif;
   resize: none;
+
   @include mobile-large {
-      width: 90%;
+    width: 90%;
   }
+
   @include tablet {
     width: 450px;
   }
+
   @include desktop {
     width: 420px;
   }
+
   @include desktop-xl {
     width: 460px;
   }
+
   &:focus {
     outline: none;
     border: 2px solid $black-primary;
     padding: 1.15em;
   }
+
   &::placeholder {
-    color: $black-primary; 
+    color: $black-primary;
   }
 }

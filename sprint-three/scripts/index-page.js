@@ -1,14 +1,102 @@
 const apiUrl = "https://project-1-api.herokuapp.com/comments";
-const apiKey = "?api_key=bd8144bc-4fe8-4d7d-a292-4c48539cecb5";
+const apiKey = "?api_key=3a373fee-e06d-4ee0-a561-dd8ad911b899";
 
-const getComments = () => {
+// Begin building comments HTML structure
+let commentStream = document.querySelector('.comments__stream');
+
+// Function to display comment data
+const displayComments = (comments) => {
+
+    commentStream.innerText = "";
+
+    comments.forEach(comment => {
+
+        // Article containing each comment
+        let commentContainer = document.createElement('article');
+        commentContainer.classList.add('comments__container');
+
+        // User profile picture div
+        let commentAvatar = document.createElement('div');
+        commentAvatar.classList.add('comments__avatar');
+        commentContainer.appendChild(commentAvatar);
+
+        // Comment name, date, text content wrap
+        let commentBlock = document.createElement('div');
+        commentBlock.classList.add('comments__block');
+        commentContainer.appendChild(commentBlock);
+
+        // Comment user name 
+        let commentName = document.createElement('h5');
+        commentName.classList.add('comments__block-name');
+        commentName.innerText = comment.name;
+        commentBlock.appendChild(commentName);
+
+        // Comment timestamp
+        let commentDate = document.createElement('date');
+        commentDate.classList.add('comments__block-date');
+        const today = new Date(comment.timestamp);
+        commentDate.innerText = today.toLocaleDateString();
+        commentBlock.appendChild(commentDate);
+
+        // Comment text
+        let commentText = document.createElement('p');
+        commentText.classList.add('comments__block-comment');
+        commentText.innerText = comment.comment;
+        commentStream.appendChild(commentContainer);
+        commentBlock.appendChild(commentText);
+
+        // Delete comment button
+        let commentDelete = document.createElement('img');
+        commentDelete.classList.add('comments__block-delete');
+        commentDelete.setAttribute('src', './assets/icons/delete-x.png');
+        commentDelete.id = comment.id;
+        commentBlock.appendChild(commentDelete);
+
+        // Delete comments when clicked
+        commentDelete.addEventListener('click', e => {
+            let commentId = e.target.id;
+            axios.delete(`${apiUrl}/${commentId}${apiKey}`)
+                .then(() => {
+                    getComments();
+                })
+                .catch(err => {
+                    console.log(err)
+                })
+        })
+        // Like button 
+        let likeBtn = document.createElement('img');
+        likeBtn.classList.add('comments__block-like');
+        likeBtn.setAttribute('src', './assets/icons/heart.png');
+        likeBtn.id = comment.id;
+        commentBlock.appendChild(likeBtn);
+
+        // Like counter
+        let likeCounter = document.createElement('p');
+        likeCounter.classList.add('comments__block-likes');
+        likeCounter.innerText = comment.likes;
+        commentBlock.appendChild(likeCounter);
+
+        // Like comments when clicked
+        likeBtn.addEventListener('click', e => {
+            let likeId = e.target.id;
+            axios.put(`${apiUrl}/${likeId}/like${apiKey}`)
+                .then(res =>
+                    likeCounter.innerText = res.data.likes
+                )
+                .catch(err =>
+                    console.error(err)
+                );
+        });
+    })
+}
+// Function to get comment data
+getComments = () => {
     axios.get(apiUrl + apiKey)
-        .then(response => {
-            let commentData = response.data;
-            response.data.sort(function (x, y) {
+        .then(res => {
+            // Sort comments to display newest comments first
+            displayComments(res.data.sort(function (x, y) {
                 return y.timestamp - x.timestamp;
-            })
-            displayComments(commentData);
+            }));
         })
         .catch(err => {
             console.error(err);
@@ -16,90 +104,27 @@ const getComments = () => {
 }
 getComments();
 
-let commentStream = document.querySelector('.comments__stream');
 
-const displayComments = (comments) => {
-
-    comments.forEach(comment => {
-
-        let commentContainer = document.createElement('article');
-        commentContainer.classList.add('comments__container');
-
-        let commentAvatar = document.createElement('div');
-        commentAvatar.classList.add('comments__avatar');
-        commentContainer.appendChild(commentAvatar);
-
-        let commentBlock = document.createElement('div');
-        commentBlock.classList.add('comments__block');
-        commentContainer.appendChild(commentBlock);
-
-        let commentName = document.createElement('h5');
-        commentName.classList.add('comments__block--name');
-        commentName.innerText = comment.name;
-        commentBlock.appendChild(commentName);
-
-        let commentDate = document.createElement('date');
-        commentDate.classList.add('comments__block--date');
-        const today = new Date(comment.timestamp);
-        commentDate.innerText = today.toLocaleDateString();
-        commentBlock.appendChild(commentDate);
-
-        let commentText = document.createElement('p');
-        commentText.classList.add('comments__block--comment');
-        commentText.innerText = comment.comment;
-        commentStream.appendChild(commentContainer);
-        commentBlock.appendChild(commentText);
-
-        let commentDelete = document.createElement('img');
-        commentDelete.classList.add('comments__block--delete');
-        commentDelete.setAttribute('src', './assets/icons/delete-x.png')
-        commentBlock.appendChild(commentDelete);
-        commentDelete.addEventListener('click', handleDelete);
-        function handleDelete(e) {
-            e.preventDefault();
-            axios.delete(`${apiUrl}/${comment.id}${apiKey}`)
-                .then(() => {
-                    location.reload()
-                })
-                .catch(err => {
-                    console.error(err);
-                })
-        }
-        let commentLike = document.createElement('img');
-        commentLike.classList.add('comments__block--like');
-        commentLike.setAttribute('src', './assets/icons/heart.png')
-        commentBlock.appendChild(commentLike);
-        commentLike.addEventListener('click', handleLike);
-        
-        let commentLikes = document.createElement('p');
-        commentLikes.classList.add('comments__block--likes');
-        commentLikes.innerText = comment.likes;
-        commentBlock.appendChild(commentLikes);
-        function handleLike(e) {
-            e.preventDefault();
-            axios.put(`${apiUrl}/${comment.id}/like${apiKey}`)
-                .then(() => {
-                    location.reload();
-                })
-                .catch(err => {
-                    console.error(err);
-                })    
-        }
-        
-    })
-}
 const commentForm = document.getElementById('commentForm');
-commentForm.addEventListener('submit', function (e) {
+// Event listener to submit comments
+commentForm.addEventListener('submit', e => {
+
+    // Prevent from reloading on submit
     e.preventDefault();
-    while (commentStream.firstChild) commentStream.firstChild.remove();
-    const userNameValue = e.target.userNameInput.value;
-    const addCommentValue = e.target.commentInput.value;
-    axios.post(apiUrl + apiKey, { name: userNameValue, comment: addCommentValue })
+    // while (commentStream.firstChild) commentStream.firstChild.remove();
+
+    // Post new comments 
+    axios.post(apiUrl + apiKey, {
+        name: e.target.userNameInput.value,
+        comment: e.target.commentInput.value
+    })
         .then(() => {
             getComments();
         })
         .catch(err => {
             console.error(err);
         })
+
+    // Reset form fields
     e.target.reset();
 })

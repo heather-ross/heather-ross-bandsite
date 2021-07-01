@@ -124,23 +124,23 @@
     padding-left: 90px;
   }
 }
-.about__quote--name {
+.about__quote-name {
   font-weight: 600;
   font-size: 0.875em;
   padding-top: 6px;
 }
 @media (min-width: 768px) {
-  .about__quote--name {
+  .about__quote-name {
     font-size: 1em;
   }
 }
 @media (min-width: 1280px) {
-  .about__quote--name {
+  .about__quote-name {
     padding-left: 80px;
   }
 }
 @media (min-width: 1440px) {
-  .about__quote--name {
+  .about__quote-name {
     padding-left: 90px;
   }
 }
@@ -359,7 +359,7 @@
     margin-left: -20px;
   }
 }
-.comments__avatar--form {
+.comments__avatar-form {
   background-image: url(../assets/images/mohan-muruge.jpg);
   background-position: center;
   background-size: cover;
@@ -370,12 +370,12 @@
   min-width: 48px;
 }
 @media (min-width: 768px) {
-  .comments__avatar--form {
+  .comments__avatar-form {
     margin-left: -15px;
   }
 }
 @media (min-width: 1440px) {
-  .comments__avatar--form {
+  .comments__avatar-form {
     margin-left: -20px;
   }
 }
@@ -458,72 +458,76 @@
     max-width: 400px;
   }
 }
-.comments__block--name, .comments__block--date {
+.comments__block-name, .comments__block-date {
   display: inline-block;
   vertical-align: middle;
 }
 @media (min-width: 768px) {
-  .comments__block--name, .comments__block--date {
+  .comments__block-name, .comments__block-date {
     vertical-align: baseline;
     font-size: 1em;
   }
 }
-.comments__block--name {
+.comments__block-name {
   padding-bottom: 6px;
 }
-.comments__block--date {
+.comments__block-date {
   color: #AFAFAF;
   font-size: 0.8125em;
   position: absolute;
   right: 16px;
 }
 @media (min-width: 768px) {
-  .comments__block--date {
+  .comments__block-date {
     position: static;
     padding-left: 10px;
     font-size: 0.875em;
   }
 }
-.comments__block--comment {
+.comments__block-comment {
   margin-top: 6px;
   padding-bottom: 2rem;
+  font-size: 0.9rem;
+  line-height: 1.15rem;
+  letter-spacing: 0.03rem;
 }
 @media (min-width: 768px) {
-  .comments__block--comment {
+  .comments__block-comment {
     margin-top: 0;
     line-height: 20px;
   }
 }
-.comments__block--delete {
+.comments__block-delete, .comments__block-like, .comments__block-likes {
+  margin: 0;
+  position: absolute;
+}
+.comments__block-delete {
   cursor: pointer;
   height: 10px;
-  margin: 0;
   position: absolute;
   bottom: 0.6rem;
   opacity: 0.4;
 }
-.comments__block--delete:hover {
+.comments__block-like {
+  cursor: pointer;
+  height: 14px;
+  bottom: 0.47rem;
+  right: 0;
+  opacity: 0.6;
+}
+.comments__block-delete:hover, .comments__block-like:hover {
   opacity: 1;
   transition: ease 0.1s;
 }
-.comments__block--like {
-  cursor: pointer;
-  height: 14px;
-  margin: 0;
-  position: absolute;
-  bottom: 0.47rem;
-  right: 0;
-}
-.comments__block--likes {
+.comments__block-likes {
   font-size: 0.9rem;
   color: #AFAFAF;
-  margin: 0;
-  position: absolute;
   bottom: 0.35rem;
   right: 1.3rem;
 }
 
-input, textarea {
+input,
+textarea {
   width: 224px;
   padding: 1.25em;
   margin: 0.5em 0;
@@ -536,26 +540,31 @@ input, textarea {
   resize: none;
 }
 @media (min-width: 440px) {
-  input, textarea {
+  input,
+textarea {
     width: 90%;
   }
 }
 @media (min-width: 768px) {
-  input, textarea {
+  input,
+textarea {
     width: 450px;
   }
 }
 @media (min-width: 1280px) {
-  input, textarea {
+  input,
+textarea {
     width: 420px;
   }
 }
 @media (min-width: 1440px) {
-  input, textarea {
+  input,
+textarea {
     width: 460px;
   }
 }
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
   outline: none;
   border: 2px solid #323232;
   padding: 1.15em;
@@ -566,6 +575,7 @@ input::-moz-placeholder, textarea::-moz-placeholder {
 input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   color: #323232;
 }
-input::placeholder, textarea::placeholder {
+input::placeholder,
+textarea::placeholder {
   color: #323232;
 }/*# sourceMappingURL=main.css.map */
